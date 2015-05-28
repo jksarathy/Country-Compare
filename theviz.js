@@ -38,6 +38,7 @@ d3.json("/country_list.json", function(error, json) {
     	maximumSelectionSize: 3
     });
     countryselection = $('#edit-select-countries').select2('data');
+    document.write(countryselection);
     
     
     //options in html for dropdown menu
@@ -61,11 +62,11 @@ d3.json("/country_list.json", function(error, json) {
 		drawRose(id, country);
 		drawLine(id, country);
 		drawSpark(country);
-	};
+    };
 	
-	$(".ind").change(function(){
+    $(".ind").change(function(){
 		drawMap();
-	});
+    });
     
     drawMap();
     drawSpark(sparkCountry);
