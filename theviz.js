@@ -27,6 +27,13 @@ var sparkCountry ="CHN";
 
 var map;
 
+$("edit-select-countries").select2( {
+	maximumSelectionSize: 3;
+});
+$("#submit_button").onclick = function () {
+	countryselection = $("edit-select-countries").select2('data');
+	id = 0;
+    };
 
 
 // JSON for select Boxes 
