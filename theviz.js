@@ -35,25 +35,29 @@ d3.json("/country_list.json", function(error, json) {
     var selecthtml = "";
     var active = 0;
     //select2 box
-    $("#edit-select-countries").select2( {
-    	maximumSelectionLength: 3
-    });
-    countryselection = $('#edit-select-countries').select2('data');
+    
     
     //options in html for dropdown menu
     $.each(json, function(name, iso) {
         selecthtml +="<option value=\"" + iso + "\">" + name + "</option>";
     }); 
     //changing countryselection to selected countries
-    $.each(countryselection, function(i, d) {
+    $("#clist").append("<select class='clist' id='edit-select-countries'>"+selecthtml+"</select>");
+    
+    $("#edit-select-countries").select2( {
+    	maximumSelectionLength: 3
+    });
+    countryselection = $('#edit-select-countries').select2('data');
+    
+   /* $.each(countryselection, function(i, d) {
         $("#clist").append("<select class='clist' id='c" + i + "'>"+selecthtml+"</select>");
         $("#c"+i+" option[value='" + d + "']").prop('selected', true);
         active++;
-    });
+    });*/
     
     // Event for checkbox change
     //$(".clist").change(function(){
-    $("#submit_button").onclick = function () {
+    $("#submit_button").click( function () {
 		id = $(this)[0].id[1];
 		country = $(this)[0].value;
 		countryselection[id] = country;
@@ -61,7 +65,7 @@ d3.json("/country_list.json", function(error, json) {
 		drawRose(id, country);
 		drawLine(id, country);
 		drawSpark(country);
-    };
+    });
 	
     $(".ind").change(function(){
 		drawMap();
