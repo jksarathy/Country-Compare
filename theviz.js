@@ -38,7 +38,8 @@ d3.json("/country_list.json", function(error, json) {
     	maximumSelectionSize: 3
     });
     countryselection = $('#edit-select-countries').select2('data');
-    document.write(countryselection);
+    
+    $(#submit_button").innerHTML = countryselection;
     
     
     //options in html for dropdown menu
