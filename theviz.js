@@ -27,23 +27,17 @@ var sparkCountry ="CHN";
 
 var map;
 
-$("edit-select-countries").select2( {
-	maximumSelectionLength: 3,
-	placeholder: "Select a state"
-});
-$("#submit_button").onclick = function () {
-	countryselection = $("edit-select-countries").select2('data');
-	id = 0;
-    };
+
 
 
 // JSON for select Boxes 
-/*d3.json("/country_list.json", function(error, json) {
+d3.json("/country_list.json", function(error, json) {
     var selecthtml = "";
     var active = 0;
     //select2 box
     $("#edit-select-countries").select2( {
     	maximumSelectionSize: 3
+    	placeholder: "Select a state"
     });
     countryselection = $('#edit-select-countries').select2('data');
     
@@ -803,4 +797,4 @@ function linearReg(data){
 	var b = (avgY - (m * avgX));
 	
 	return {m:m, b:b};
-}*/
+}
