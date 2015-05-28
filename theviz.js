@@ -30,7 +30,7 @@ var map;
 
 
 // JSON for select Boxes 
-d3.json("/country_list.json", function(error, json) {
+/*d3.json("/country_list.json", function(error, json) {
     var selecthtml = "";
     var active = 0;
     //select2 box
@@ -151,7 +151,7 @@ function drawMap(){
 		});
 		
 		var map = newMap(data);
-		/*$('#map').highcharts('Map', map);*/
+		//$('#map').highcharts('Map', map);
 	});
 }
 
@@ -795,4 +795,4 @@ function linearReg(data){
 	var b = (avgY - (m * avgX));
 	
 	return {m:m, b:b};
-}
+}*/
