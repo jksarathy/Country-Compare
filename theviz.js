@@ -39,9 +39,6 @@ d3.json("/country_list.json", function(error, json) {
     });
     countryselection = $('#edit-select-countries').select2('data');
     
-    $(#submit_button").innerHTML = countryselection;
-    
-    
     //options in html for dropdown menu
     $.each(json, function(name, iso) {
         selecthtml +="<option value=\"" + iso + "\">" + name + "</option>";
