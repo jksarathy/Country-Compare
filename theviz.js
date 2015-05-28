@@ -28,7 +28,7 @@ var sparkCountry ="CHN";
 var map;
 
 $("edit-select-countries").select2( {
-	maximumSelectionSize: 3
+	maximumSelectionSize: 3,
 	placeholder: "Select a state"
 });
 $("#submit_button").onclick = function () {
