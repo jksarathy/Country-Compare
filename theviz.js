@@ -34,7 +34,10 @@ var map;
 d3.json("/country_list.json", function(error, json) {
     var selecthtml = "";
     var active = 0;
-    //select2 box
+    
+    var s = document.createElement("input");
+    s.type = "submit";
+    s.value = "Submit";
     
     
     //options in html for dropdown menu
