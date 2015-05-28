@@ -36,8 +36,7 @@ d3.json("/country_list.json", function(error, json) {
     var active = 0;
     //select2 box
     $("#edit-select-countries").select2( {
-    	maximumSelectionLength: 3,
-    	placeholder: "Select a state"
+    	maximumSelectionLength: 3;
     });
     countryselection = $('#edit-select-countries').select2('data');
     
