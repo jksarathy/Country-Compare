@@ -27,7 +27,9 @@ var sparkCountry ="CHN";
 
 var map;
 
-
+var s = document.createElement("input");
+    s.type = "submit";
+    s.value = "Submit";
 
 
 // JSON for select Boxes 
@@ -35,9 +37,7 @@ d3.json("/country_list.json", function(error, json) {
     var selecthtml = "";
     var active = 0;
     
-    var s = document.createElement("input");
-    s.type = "submit";
-    s.value = "Submit";
+    
     
     
     //options in html for dropdown menu
