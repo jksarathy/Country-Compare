@@ -1,11 +1,68 @@
 body {
-    font-weight: bold;
+    /*background: url(http://epi.yale.edu/sites/all/themes/epi_theme/images/bg_map.png);*/
+    background: #EEEEEE;
+    font-weight: normal;
+    font-size: 14px;
+    font-family: "Helvetica Neue";
 }
 
+h2 {
+  font-weight: 100;
+}
+
+h6 {
+  color: #2090FF;
+  font-weight: bold;
+}
+
+div {
+  /*border: 1px solid;*/
+  margin: 5px;
+}
+
+.container {
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.forms {
+  background: #FFFFFF;
+  box-shadow: 2px 2px 2px #939396;
+  padding: 5px;
+  position: relative;
+  border-radius: 3px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.map, .sparkChart, .lineChart, .maincontainer {
+  background: #FFFFFF;
+  box-shadow: 2px 2px 2px #939396;
+}
+
+input {
+  background-color: #5C5C5C;
+  color: white;
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  border-radius: 8px;
+  width: 130px;
+}
+
+#clist, #categories, input {display: inline-block; font-size: 12px; vertical-align: top;}
+#clist {
+  width: 30%;
+}
+#categories {
+  width: 40%;
+}
+
+
 #maincontainer {
-    width: 100%;
     height: 500px;
-    border: 1px solid;
 }
 
 .country {
@@ -70,16 +127,13 @@ h1{
 	height: 100px;
 }
 
-.clist{
-	width: 33%;
-}
 
 .sel-title{
 	width: 33%;
 	float: left;
 }
 
-@font-face {
+/*@font-face {
   font-family: 'Centro';
   font-style: normal;
   font-weight: normal;
@@ -98,4 +152,4 @@ h1{
   font-style: normal;
   font-weight: normal;
   src: local('CentroIT'), url("fonts/pfcentrosanspro-lightitalic-webfont.ttf") format("truetype");
-}
+}*/
