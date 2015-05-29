@@ -2,7 +2,7 @@
 function runViz() {
 //window.onload=function(){
 $(document).ready(function(){ //jquery ~equivalent for window.onload//
-
+document.write("hi");
 var width = 350;
 var height = 350;
 var radius = Math.min(width, height) / 3.3;
