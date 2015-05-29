@@ -27,9 +27,7 @@ var sparkCountry ="CHN";
 
 var map;
 
-var s = document.createElement("input");
-    s.type = "submit";
-    s.value = "Submit";
+document.getElementById("test").innerHTML = 5 + 6;
 
 
 // JSON for select Boxes 
