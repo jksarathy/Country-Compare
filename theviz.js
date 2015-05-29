@@ -140,7 +140,7 @@ function drawMap(){
 		});
 		
 		var map = newMap(data);
-		/*$('#map').highcharts('Map', map);*/
+		$('#map').highcharts('Map', map);
 	});
 }
 
