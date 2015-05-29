@@ -7,6 +7,11 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
 	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+	<script>
+		function myFunction() {
+			document.getElementById("submit_button").innerHTML = "Changed";
+		}
+	</script>
 
 	<!--new stuff-->
 	<script type="text/javascript" src="js/bootstrap.js"></script>
@@ -63,7 +68,8 @@
 						<option>D</option>
 						<option>E</option>
 				</select>-->
-				<!--<input id="submit_button" type="submit" value="Submit">-->
+				<input id="submit_button" type="submit" value="Submit">
+				<button type="button" onclick="myFunction()">try it</button>
 
 			</div>
 
