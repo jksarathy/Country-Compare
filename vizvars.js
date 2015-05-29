@@ -1,27 +1,27 @@
 var data = {
-	"year": 2012, 
-	"data": {
-		"countries": [{
-				"id":"AFG",
-				"name": "Afghanistan",
-				"categories":[
-					{"name": "EH_HealthImpacts", "value": 66.83},
-					{"name": "EV_BiodiversityHabitat", "value": 10.83},
-					{"name": "EH_WaterSanitation", "value": 90.83},
-					{"name": "EV_Agriculture", "value": 44.83}
-				]			
-			},
-			{
-				"id":"GER",
-				"name": "Germany",
-				"categories":[
-					{"name": "EH_HealthImpacts", "value": 60.83},
-					{"name": "EV_BiodiversityHabitat", "value": 80.83},
-					{"name": "EH_WaterSanitation", "value": 60.83},
-					{"name": "EV_Agriculture", "value": 33.83}
-				]
-			}]
-	}
+"year": 2012, 
+"data": {
+"countries": [{
+"id":"AFG",
+"name": "Afghanistan",
+"categories":[
+{"name": "EH_HealthImpacts", "value": 66.83},
+{"name": "EV_BiodiversityHabitat", "value": 10.83},
+{"name": "EH_WaterSanitation", "value": 90.83},
+{"name": "EV_Agriculture", "value": 44.83}
+]
+},
+{
+"id":"GER",
+"name": "Germany",
+"categories":[
+{"name": "EH_HealthImpacts", "value": 60.83},
+{"name": "EV_BiodiversityHabitat", "value": 80.83},
+{"name": "EH_WaterSanitation", "value": 60.83},
+{"name": "EV_Agriculture", "value": 33.83}
+]
+}]
+}
 };
 
 var issueColors = {
