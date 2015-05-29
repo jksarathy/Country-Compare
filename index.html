@@ -1,21 +1,12 @@
-<html lang="en">
-<head>
-	<title>EPI Country Comparator</title>
-	
-	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
+<!DOCTYPE html>
+<html lang="en"><head><title>EPI Country Comparator</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
-	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
-	<script>
-		function myFunction() {
-			document.getElementById("test").innerHTML = "Changed";
-		}
-	</script>
 
 	<!--new stuff-->
-	<script type="text/javascript" src="js/bootstrap.js"></script>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+	<script type="text/javascript" src="bootstrap.js"></script>
+	<link href="bootstrap.min.css" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Exo+2:100,600,300" rel="stylesheet" type="text/css">
 	<link href="fstyle.css" rel="stylesheet">
 	<!--end new stuff-->
@@ -33,7 +24,7 @@
 
 
 	<link href="http://cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.css" rel="stylesheet">
-	<link href="startingstyle.css" rel="stylesheet">
+	<link href="mystyle.css" rel="stylesheet">
 
 	<script type="text/javascript" src="vizvars.js"></script>
 	<script type="text/javascript" src="theviz.js"></script>
@@ -49,34 +40,36 @@
 	<body>
 		<div class="navbar navbar-inverse" role="navigation"></div>
 		<div class="container">
-			<h3>Select countries to compare</h3>
-			<div class="row">
-				<div class="sel-title">Country #1<!--<select class="form-control"><option>asdf</option></select>--> <!--this seems to break EVERYthing-->
+			<div class="title">
+				<h6>2014 EPI</h6>
+				<h2>Country Comparison</h2>
+				<p>The EPI Country Comparison tool allows users to dynamically explore data from custom-defined groups of countries through various perspectives. Try out this tool to compare performance of countries in terms of time periods, specific indicators, and global environmental goals.</p>
+			</div>
+			<!--<div class="row">
+				<div class="sel-title">Country #1
 				</div>
 				<div class="sel-title">Country #2
 				</div>
 				<div id="test" class="sel-title">Country #3
 				</div>
+			</div>-->
+
+			<div class="forms">
+				<div id="clist">
+					<h5>Select up to three countries</h5>
+				</div>
+
+				<div id="categories">
+					<div class="ind">
+						<h5>Indicator</h5>
+					</div>
+					<div class="subind">
+						<h5>Subindicator</h5>
+					</div>
+				</div>
+
+				<input id='submit_button' type='submit' value='Generate Charts'/>
 			</div>
-
-			<div id="clist">
-
-				<select class="form-control" multiple id="edit-select-countries" style="width:200px">
-						<option>A</option>
-						<option>B</option>
-						<option>C</option>
-						<option>D</option>
-						<option>E</option>
-				</select>
-				<input id="submit_button" type="submit" value="Submit">
-				<button type="button" onclick="myFunction()">try it</button>
-
-			</div>
-
-			Indicator
-			<div class="ind"></div>
-			Subindicator
-			<div class="subind"></div>
 
 			<div id="map"></div>
 			<div id="sparkChart"></div>  
@@ -96,3 +89,6 @@
 		</div>
 	</body>
 </html>
+    
+    
+    
