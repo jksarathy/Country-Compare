@@ -1,10 +1,9 @@
 //wrapping function - dsd
 function runViz() {
 //window.onload=function(){
-document.getElementById("test").innerHTML = 5 + 6;
 
 $(document).ready(function(){ //jquery ~equivalent for window.onload//
-document.write("hi");
+//document.write("hi");
 var width = 350;
 var height = 350;
 var radius = Math.min(width, height) / 3.3;
@@ -29,7 +28,7 @@ var sparkCountry ="CHN";
 
 var map;
 
-document.getElementById("test").innerHTML = 5 + 6;
+//document.getElementById("test").innerHTML = 5 + 6;
 
 
 // JSON for select Boxes 
@@ -37,26 +36,25 @@ d3.json("/country_list.json", function(error, json) {
     var selecthtml = "";
     var active = 0;
     
-    
-    
+    $("#edit-select-countries").select2( {
+    	maximumSelectionLength: 3
+    });
+    countryselection = $('#edit-select-countries').select2('data');
     
     //options in html for dropdown menu
     $.each(json, function(name, iso) {
         selecthtml +="<option value=\"" + iso + "\">" + name + "</option>";
     }); 
     //changing countryselection to selected countries
-    $("#clist").append("<select class='clist' id='edit-select-countries'>"+selecthtml+"</select>");
+    //$("#clist").append("<select class='clist' id='edit-select-countries'>"+selecthtml+"</select>");
     
-    $("#edit-select-countries").select2( {
-    	maximumSelectionLength: 3
-    });
-    countryselection = $('#edit-select-countries').select2('data');
+
     
-   /* $.each(countryselection, function(i, d) {
+   $.each(countryselection, function(i, d) {
         $("#clist").append("<select class='clist' id='c" + i + "'>"+selecthtml+"</select>");
         $("#c"+i+" option[value='" + d + "']").prop('selected', true);
         active++;
-    });*/
+    });
     
     // Event for checkbox change
     //$(".clist").change(function(){
