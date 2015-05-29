@@ -34,31 +34,50 @@ d3.json("/country_list.json", function(error, json) {
     $.each(json, function(name, iso) {
         selecthtml +="<option value=\"" + iso + "\">" + name + "</option>";
     }); 
-    $.each(countryselection, function(i, d) {
-        $("#clist").append("<select class='clist' id='c" + i + "'>"+selecthtml+"</select>");
+    /*$.each(countryselection, function(i, d) {
+        //$("#clist").append("<select class='clist' id='c" + i + "'>"+selecthtml+"</select>");
         $("#c"+i+" option[value='" + d + "']").prop('selected', true);
         active++;
+    });*/
+
+    $("#clist").append("<select class='clist' multiple id='edit-select-countries'>"+selecthtml+"</select>");
+    //$("#clist").append("<input id='submit_button' type='submit' value='Generate Charts'/>");
+
+    $("#edit-select-countries").select2( {
+    	maximumSelectionLength: 3
     });
     
     // Event for checkbox change
-    $(".clist").change(function(){
-		id = $(this)[0].id[1];
+    //$(".clist").change(function(){
+    $("#submit_button").click(function() {
+    	countryselection = $('#edit-select-countries').select2("val");
+    	//document.getElementById("test").innerHTML = countryselection;
+
+    	$.each(countryselection, function(i, d) {
+    		window.alert(i);
+    		window.alert(d);
+    		//drawRose(i,d);
+    		drawLine(i,d);
+    		drawSpark(d);
+    	})
+		
+		/*id = $(this)[0].id[1];
 		country = $(this)[0].value;
 		countryselection[id] = country;
 		
 		drawRose(id, country);
 		drawLine(id, country);
-		drawSpark(country);
+		drawSpark(country);*/
 	});
 	
-	$(".ind").change(function(){
+	/*$(".ind").change(function(){
 		drawMap();
-	});
+	});*/
     
     drawMap();
     drawSpark(sparkCountry);
     initLine();
-    initRoses();
+    //initRoses();
 });
 
 d3.json("/indicator_list.json", function(error, json) {
@@ -121,7 +140,7 @@ pie = d3.layout.pie()
 
 function drawMap(){
 	var data = [];
-	d3.json("/radar_chart.json?years[]=2012&indicators[]=" + indicator.id, function(error, json) {
+	d3.json("/default_map.json", function(error, json) {
 		vals = json[0];
 		
 		var hash = new Object();
@@ -140,7 +159,15 @@ function drawMap(){
 		});
 		
 		var map = newMap(data);
-		$('#map').highcharts('Map', map);
+		//$('#map').highcharts('Map', map);
+
+
+            // Instantiate chart
+            $("#map").highcharts('Map', map);
+
+            //showDataLabels = $("#chkDataLabels").attr('checked');
+
+	  
 	});
 }
 
@@ -164,6 +191,23 @@ function newMap(data){
 				[1, indicator.color]
 			]
 		},
+		chart: {
+            renderTo: 'container',
+            events: {
+                load: function () {
+                    if (this.options.chart.forExport) {
+                        Highcharts.each(this.series, function (series) {
+                           	series.update({
+                                dataLabels: {
+                                    enabled: true
+                                }
+                            }, false);
+                        });
+                    	this.redraw();
+                    }
+                }
+            }
+        },
         series : [{
             data : data,
             mapData: Highcharts.maps['custom/world'],
@@ -175,6 +219,10 @@ function newMap(data){
 }
 
 function drawRose(key, country) {
+
+	window.alert(key);
+	window.alert(country);
+
 	url = "iso_codes[]="+country+"&";
 	var div = d3.select("#country" + key);
 	
@@ -432,10 +480,13 @@ function drawLine(key, country){
 
 function drawSpark(country){
 	var subindicatorid = (subindicator.id == "CO2GDPd2") ? "CO2GDPd1" : subindicator.id;
-	d3.json("/indicator_trend.json?iso_codes[]=" + country + "&indicators[]=" + subindicatorid, function(error, json) {
+	//http://epi.yale.edu/api/raw_data.json?country=MEX&indicator=CHMORT
+	d3.json("http://epi.yale.edu/api/raw_data.json?country=" + country + "&indicator=CHMORT", function(error,json) {
+	//indicator_trend.json?iso_codes[]=" + country + "&indicators[]=" + subindicatorid, function(error, json) {
 		if (! (sparkChart === undefined))
 			sparkChart.destroy();
-		var data = json[0][0].indicator_trend;
+		//var data = json[0][0].indicator_trend;
+		var data = json.indicator_trend;
 		
 		sparkCountry = country;
 		
