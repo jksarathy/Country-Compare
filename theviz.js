@@ -1,6 +1,8 @@
 //wrapping function - dsd
 function runViz() {
 //window.onload=function(){
+document.getElementById("test").innerHTML = 5 + 6;
+
 $(document).ready(function(){ //jquery ~equivalent for window.onload//
 document.write("hi");
 var width = 350;
