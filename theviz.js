@@ -220,9 +220,6 @@ function newMap(data){
 
 function drawRose(key, country) {
 
-	window.alert(key);
-	window.alert(country);
-
 	url = "iso_codes[]="+country+"&";
 	var div = d3.select("#country" + key);
 	
