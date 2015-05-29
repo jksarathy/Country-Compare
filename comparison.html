@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>EPI Country Comparator</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<!--new stuff-->
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Exo+2:100,600,300" rel="stylesheet" type="text/css">
+	<link href="fstyle.css" rel="stylesheet">
+	<!--end new stuff-->
+
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.6/d3.min.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.js"></script>
+
+	<!--Highcharts-->
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="http://code.highcharts.com/highcharts-more.js"></script>
+	<script src="http://code.highcharts.com/maps/modules/map.js"></script>
+	<script src="http://code.highcharts.com/mapdata/custom/world.js"></script>
+	<script src="http://code.highcharts.com/modules/data.js"></script>
+	<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+
+	<link href="http://cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.css" rel="stylesheet">
+	<link href="startingstyle.css" rel="stylesheet">
+
+	<script type="text/javascript" src="vizvars.js"></script>
+	<script type="text/javascript" src="theviz.js"></script>
+	<script src="http://canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> 
+	<script src="http://canvg.googlecode.com/svn/trunk/canvg.js"></script> 
+
+
+	<script type="text/javascript">
+		runViz();
+	</script>
+	</head>
+
+	<body>
+		<div class="navbar navbar-inverse" role="navigation"></div>
+		<div class="container">
+			<h3>Select countries to compare</h3>
+			<div class="row">
+				<div class="sel-title">Country #1<!--<select class="form-control"><option>asdf</option></select>--> <!--this seems to break EVERYthing-->
+				</div>
+				<div class="sel-title">Country #2
+				</div>
+				<div class="sel-title">Country #3
+				</div>
+			</div>
+
+			<div id="clist"></div>
+
+			Indicator
+			<div class="ind"></div>
+			Subindicator
+			<div class="subind"></div>
+
+			<div id="map"></div>
+			<div id="sparkChart"></div>  
+			<div id="lineChart"></div>   
+			<div id="maincontainer">
+				<ul>
+  					<li><div class="country" id="country0"></div></li>
+  					<li><div class="country" id="country1"></div></li>
+  					<li><div class="country" id="country2"></div></li>
+				</ul>
+				<!--<div class="country" id="country0"></div>
+				<div class="country" id="country1"></div>
+				<div class="country" id="country2"></div>-->
+			</div>
+
+			<!--
+			<div id="leg"></div>
+			-->
+			<!--
+			<img src="./indicators.png" style="padding: 20px;"/>
+			-->
+		</div>
+	</body>
+</html>
+    
+    
+    
