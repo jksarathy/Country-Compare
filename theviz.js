@@ -478,7 +478,7 @@ function drawLine(key, country){
 function drawSpark(country){
 	var subindicatorid = (subindicator.id == "CO2GDPd2") ? "CO2GDPd1" : subindicator.id;
 	//http://epi.yale.edu/api/raw_data.json?country=MEX&indicator=CHMORT
-	d3.json("//epi.yale.edu/api/raw_data.json?country=" + country + "&indicator=CHMORT", function(error,json) { //http
+	d3.json("https://epi.yale.edu/api/raw_data.json?country=" + country + "&indicator=CHMORT", function(error,json) { //http
 	//indicator_trend.json?iso_codes[]=" + country + "&indicators[]=" + subindicatorid, function(error, json) {
 		if (! (sparkChart === undefined))
 			sparkChart.destroy();
