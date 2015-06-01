@@ -28,7 +28,7 @@ var sparkCountry ="CHN";
 var map;
 
 // JSON for select Boxes 
-d3.json("/country_list.json", function(error, json) {
+d3.json("/country_list.json", function(error, json) { // http://localhost/country_list.json
     var selecthtml = "";
     var active = 0;
     $.each(json, function(name, iso) {
@@ -54,8 +54,8 @@ d3.json("/country_list.json", function(error, json) {
     	//document.getElementById("test").innerHTML = countryselection;
 
     	$.each(countryselection, function(i, d) {
-    		window.alert(i);
-    		window.alert(d);
+    		//window.alert(i);
+    		//window.alert(d);
     		//drawRose(i,d);
     		drawLine(i,d);
     		drawSpark(d);
