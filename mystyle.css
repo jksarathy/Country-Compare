@@ -1,6 +1,6 @@
 body {
-    /*background: url(http://epi.yale.edu/sites/all/themes/epi_theme/images/bg_map.png);*/
-    background: #EEEEEE url("bg_map.png") no-repeat fixed;*/
+    background: #EEEEEE url(//epi.yale.edu/sites/all/themes/epi_theme/images/bg_map.png) no-repeat;
+    /*background: #EEEEEE url("bg_map.png") no-repeat fixed;*/
     /*background-image: url("bg_map.png");*/
     /*border: 1px solid;*/
     /*background: #EEEEEE;*/
