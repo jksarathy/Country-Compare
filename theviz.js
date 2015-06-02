@@ -52,7 +52,7 @@ d3.json("/country_list.json", function(error, json) { // http://localhost/countr
     drawMap();
     initLine();
     $.each(countryselection, function(i,d) {
-    	window.alert(d);
+    	//window.alert(d);
     	drawLine(i,d);
     });
     
@@ -519,12 +519,13 @@ function drawLine(key, country){
 			col = "#12E25C";
 
 		var extremes = lineChart.yAxis[0].getExtremes();
-		if (min > extremes.min) min = extremes.min;
-		if (max < extremes.max) max = extremes.max;
+		if (min > extremes.dataMin) min = extremes.dataMin;
+		if (max < extremes.dataMax) max = extremes.dataMax;
 		var range = max - min;
 
 		lineChart.yAxis[0].setExtremes(min, max + range/5);
-		lineChart.yAxis[0].setTitle(subindicator.name);
+		lineChart.options.yAxis[0].title.text = subindicator.name; //saves into exported options??
+		//lineChart.yAxis[0].setTitle(subindicator.name);
 		lineChart.series[key].setData(dat, true);
 		lineChart.series[key].update({name: country, color: col}, true);
 
