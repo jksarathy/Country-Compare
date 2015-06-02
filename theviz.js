@@ -451,19 +451,43 @@ function drawLine(key, country){
     // JSON for line graph
     //"/line_graph.json?indicator=" + indicator.id + "&iso_codes[]=" + country
     d3.json("http://epi.yale.edu/api/raw_data.json?country=" + country + "&indicator=" + subindicatorid, function(error, json) {
-		var dat = [];
+		//var dat = [];
 		
 		if (json === undefined){
 			for(var year = 2002; year<2013; year++)
 				dat.push({x: year, y: -1});
 		}
-		else{
+		/*else{
 			indicatorData = json.data[0].values; 
 			$.map(indicatorData, function(obj, i) {
 				dat.push({x: parseInt(obj.year), y: parseInt(obj.value)});
 			});
 		}
-		lineChart.series[key].setData(dat, true);
+		lineChart.series[key].setData(dat, true);*/
+
+		//copied from spark chart
+		/*if (! (sparkChart === undefined))
+			sparkChart.destroy();*/
+		var data = json.indicator_trend;	
+		//sparkCountry = country;
+		
+		// Trim trailing NA's
+		var x = 0;
+		while(data[x] != null && data[x].value == "NA") x++;
+		data.splice(0, x);
+		
+		// Trim ending NA's
+		x = data.length-1;
+		while(x > 0 && data[x].value == "NA") x--;
+		data.splice(x+1, data.length);
+		
+		var dat = [];
+		$.map(data, function(obj, i) {
+			var mark = false;
+			if (i == 0 || i == data.length-1) mark = true;
+			var val = parseFloat(obj.value);
+			if (isNaN(val)) val = null;
+			dat.push({x: parseInt(obj.year), y: val, marker: {enabled: mark}});
 	});
 	
 	var col = "";
@@ -480,7 +504,7 @@ function drawLine(key, country){
 function drawSpark(country){
 	var subindicatorid = (subindicator.id == "CO2GDPd2") ? "CO2GDPd1" : subindicator.id;
 	//http://epi.yale.edu/api/raw_data.json?country=MEX&indicator=CHMORT
-	d3.json("http://epi.yale.edu/api/raw_data.json?country=" + country + "&indicator=CHMORT", function(error,json) { //http
+	d3.json("http://epi.yale.edu/api/raw_data.json?country=" + country + "&indicator=" + subindicator.id, function(error,json) { //http
 	//indicator_trend.json?iso_codes[]=" + country + "&indicators[]=" + subindicatorid, function(error, json) {
 		if (! (sparkChart === undefined))
 			sparkChart.destroy();
