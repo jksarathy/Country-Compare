@@ -108,7 +108,7 @@ d3.json("/subindicator_list.json", function(error, json) {
 	});*/
 	subindicator = subindicators[0];
 	$("#submit_button").click(function() {
-		subindicator = subindicators[$('#ind')[0].value];
+		subindicator = subindicators[$('#subind')[0].value];
 		runCharts();
 	});
 });
