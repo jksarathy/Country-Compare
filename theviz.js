@@ -52,7 +52,9 @@ d3.json("/country_list.json", function(error, json) { // http://localhost/countr
     // Event for checkbox change
     //$(".clist").change(function(){
     $("#submit_button").click(function() {
-    	countryselection = $('#edit-select-countries').select2("val");
+    	var new_countryselection = $('#edit-select-countries').select2("val");
+    	countryselection = (new_countryselection == null) ? countryselection : new_countryselection;
+
     	sparkCountry = countryselection[0];
     	runCharts();
 	});
