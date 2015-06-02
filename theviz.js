@@ -52,6 +52,7 @@ d3.json("/country_list.json", function(error, json) { // http://localhost/countr
     drawMap();
     initLine();
     $.each(countryselection, function(i,d) {
+    	window.alert(d);
     	drawLine(i,d);
     });
     
@@ -466,6 +467,7 @@ function drawLine(key, country){
 		//var dat = [];
 		
 		if (json === undefined){
+			window.alert("json undefined");
 			for(var year = 2002; year<2013; year++)
 				dat.push({x: year, y: -1});
 		}
@@ -495,6 +497,7 @@ function drawLine(key, country){
 		
 		var dat = [];
 		$.map(data, function(obj, i) {
+			window.alert("putting into dat");
 			var mark = false;
 			if (i == 0 || i == data.length-1) mark = true;
 			var val = parseFloat(obj.value);
