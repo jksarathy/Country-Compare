@@ -27,6 +27,8 @@ var sparkCountry ="CHN";
 
 var map;
 
+runCharts();
+
 // JSON for select Boxes 
 d3.json("/country_list.json", function(error, json) { // http://localhost/country_list.json
     var selecthtml = "";
@@ -46,40 +48,13 @@ d3.json("/country_list.json", function(error, json) { // http://localhost/countr
     $("#edit-select-countries").select2( {
     	maximumSelectionLength: 3
     });
-
-    //new initialization
-    drawSpark(sparkCountry);
-    drawMap();
-    initLine();
-    $.each(countryselection, function(i,d) {
-    	//window.alert(d);
-    	drawLine(i,d);
-    });
     
     // Event for checkbox change
     //$(".clist").change(function(){
     $("#submit_button").click(function() {
     	countryselection = $('#edit-select-countries').select2("val");
-    	//document.getElementById("test").innerHTML = countryselection;
-
-    	$.each(countryselection, function(i, d) {
-    		//window.alert(i);
-    		//window.alert(d);
-    		//drawRose(i,d);
-    		drawLine(i,d);
-    		//drawSpark(d);
-    	});
-
     	sparkCountry = countryselection[0];
-    	drawSpark(sparkCountry)
-		
-		/*id = $(this)[0].id[1];
-		country = $(this)[0].value;
-		countryselection[id] = country;
-		
-		drawRose(id, country);
-		drawLine(id, country);
-		drawSpark(country);*/
+    	runCharts();
 	});
 	
 	/*$(".ind").change(function(){
@@ -103,12 +78,15 @@ d3.json("/indicator_list.json", function(error, json) {
 	$(".ind").append("<select id='ind'>" + indhtml + "</select>");
 	$(".ind option[value='EH_HealthImpacts']").prop('selected', true);
 	
-	$("#ind").change(function(){
+	/*	$("#ind").change(function(){
 		indicator = indicators[$(this)[0].value];
 		initLine();
-	});
-	
+	});*/
 	indicator = indicators[0];
+	$("#submit_button").click(function() {
+		indicator = indicators[$('#ind')[0].value];
+		runCharts();
+	});
 });
 
 d3.json("/subindicator_list.json", function(error, json) {
@@ -120,15 +98,19 @@ d3.json("/subindicator_list.json", function(error, json) {
 	$(".subind").append("<select id='subind'>" + subindhtml + "</select>");
 	$(".ind option[value='CHMORT']").prop('selected', true);
 	
-	$("#subind").change(function(){
+	/*$("#subind").change(function(){
 		subindicator = subindicators[$(this)[0].value];
 		// This is the only way to handle the superscript using SVG subtitle and tooltip.
 		if (subindicator.shortunits == "Microg/m^3") subindicator.shortunits = "\xB5g/m\xB3";
 		drawSpark(sparkCountry);
-	});
-	
+	});*/
 	subindicator = subindicators[0];
+	$("#submit_button").click(function() {
+		subindicator = subindicators[$('#ind')[0].value];
+		runCharts();
+	});
 });
+
 
 // Indicator list setup
 $.each(issueColors, function(key, d) {
@@ -150,6 +132,15 @@ pie = d3.layout.pie()
     .value(function (d) {
     return 1;
 });
+
+function runCharts() {
+	drawMap();
+	drawSpark(sparkCountry);
+	initLine();
+	$.each(countryselection, function(i, d) {
+    	drawLine(i,d);
+    });
+}
 
 function drawMap(){
 	var data = [];

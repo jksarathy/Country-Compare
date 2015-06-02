@@ -1,1 +1,47 @@
-[{"id":"EH_HealthImpacts","name":"Health Impacts","color":"#ff9600"},{"id":"EH_AirQuality","name":"Air Quality","color":"#f7c80b"},{"id":"EH_WaterSanitation","name":"Water and Sanitation","color":"#ff6d24"},{"id":"EV_WaterResources","name":"Water and Resources","color":"#7993f2"},{"id":"EV_Agriculture","name":"Agriculture","color":"#2e74ba"},{"id":"EV_Forests","name":"Forests","color":"#009bcc"},{"id":"EV_Fisheries","name":"Fisheries","color":"#008c8c"},{"id":"EV_BiodiversityHabitat","name":"Biodiversity and Habitat","color":"#00ccaa"},{"id":"EV_ClimateEnergy","name":"Climate and Energy","color":"#1cb85d"}]
+[
+    {
+        "id": "EH_HealthImpacts",
+        "name": "Health Impacts",
+        "color": "#ff9600"
+    },
+    {
+        "id": "EH_AirQuality",
+        "name": "Air Quality",
+        "color": "#f7c80b"
+    },
+    {
+        "id": "EH_WaterSanitation",
+        "name": "Water and Sanitation",
+        "color": "#ff6d24"
+    },
+    {
+        "id": "EV_WaterResources",
+        "name": "Water and Resources",
+        "color": "#7993f2"
+    },
+    {
+        "id": "EV_Agriculture",
+        "name": "Agriculture",
+        "color": "#2e74ba"
+    },
+    {
+        "id": "EV_Forests",
+        "name": "Forests",
+        "color": "#009bcc"
+    },
+    {
+        "id": "EV_Fisheries",
+        "name": "Fisheries",
+        "color": "#008c8c"
+    },
+    {
+        "id": "EV_BiodiversityHabitat",
+        "name": "Biodiversity and Habitat",
+        "color": "#00ccaa"
+    },
+    {
+        "id": "EV_ClimateEnergy",
+        "name": "Climate and Energy",
+        "color": "#1cb85d"
+    }
+]
