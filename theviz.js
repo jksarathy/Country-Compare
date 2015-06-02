@@ -50,6 +50,7 @@ d3.json("/country_list.json", function(error, json) { // http://localhost/countr
     //new initialization
     drawSpark(sparkCountry);
     drawMap();
+    initLine();
     $.each(countryselection, function(i,d) {
     	drawLine(i,d);
     });
