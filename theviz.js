@@ -496,11 +496,17 @@ function drawLine(key, country){
 		data.splice(x+1, data.length);
 		
 		var dat = [];
+		var min = 0.0;
+		var max = 1.01;
 		$.map(data, function(obj, i) {
 			var mark = false;
 			if (i == 0 || i == data.length-1) mark = true;
 			var val = parseFloat(obj.value);
 			if (isNaN(val)) val = null;
+			else {
+				if (val < min) min = val;
+				if (val > max) max = val;
+			}
 			dat.push({x: parseInt(obj.year), y: val, marker: {enabled: mark}});
 		});
 	
@@ -512,7 +518,9 @@ function drawLine(key, country){
 		else if (key == 2)
 			col = "#12E25C";
 
-		lineChart.yAxis[0].setExtremes(0,0.04);
+		var range = max - min;
+
+		lineChart.yAxis[0].setExtremes(min, max);
 		lineChart.series[key].setData(dat, true);
 		lineChart.series[key].update({name: country, color: col}, true);
 
