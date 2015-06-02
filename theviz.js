@@ -524,8 +524,13 @@ function drawLine(key, country){
 		var range = max - min;
 
 		lineChart.yAxis[0].setExtremes(min, max + range/5);
-		lineChart.options.yAxis[0].title.text = subindicator.name; //saves into exported options??
+		//lineChart.options.yAxis[0].title.text = subindicator.name; //saves into exported options??
 		//lineChart.yAxis[0].setTitle(subindicator.name);
+		lineChart.yAxis[0].update({
+                title:{
+                    text: subindicator.name;
+                }
+            });
 		lineChart.series[key].setData(dat, true);
 		lineChart.series[key].update({name: country, color: col}, true);
 
