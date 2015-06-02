@@ -497,7 +497,6 @@ function drawLine(key, country){
 		
 		var dat = [];
 		$.map(data, function(obj, i) {
-			window.alert("putting into dat");
 			var mark = false;
 			if (i == 0 || i == data.length-1) mark = true;
 			var val = parseFloat(obj.value);
@@ -514,6 +513,7 @@ function drawLine(key, country){
 			col = "#12E25C";
 
 		lineChart.yAxis[0].setExtremes(0,1.1);
+		lineChart.series[key].setData(dat, true);
 		lineChart.series[key].update({name: country, color: col}, true);
 
 	});
