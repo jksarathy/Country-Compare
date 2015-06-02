@@ -52,7 +52,7 @@ d3.json("/country_list.json", function(error, json) { // http://localhost/countr
     drawMap();
     $.each(countryselection, function(i,d) {
     	drawLine(i,d);
-    }
+    });
     
     // Event for checkbox change
     //$(".clist").change(function(){
@@ -66,7 +66,7 @@ d3.json("/country_list.json", function(error, json) { // http://localhost/countr
     		//drawRose(i,d);
     		drawLine(i,d);
     		drawSpark(d);
-    	})
+    	});
 		
 		/*id = $(this)[0].id[1];
 		country = $(this)[0].value;
