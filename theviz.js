@@ -46,6 +46,13 @@ d3.json("/country_list.json", function(error, json) { // http://localhost/countr
     $("#edit-select-countries").select2( {
     	maximumSelectionLength: 3
     });
+
+    //new initialization
+    drawSpark(sparkCountry);
+    drawMap();
+    $.each(countryselection, function(i,d) {
+    	drawLine(i,d);
+    }
     
     // Event for checkbox change
     //$(".clist").change(function(){
@@ -74,10 +81,11 @@ d3.json("/country_list.json", function(error, json) { // http://localhost/countr
 		drawMap();
 	});*/
     
-    drawMap();
-    drawSpark(sparkCountry);
-    initLine();
+    //drawMap();
+    //drawSpark(sparkCountry);
+    //initLine();
     //initRoses();
+
 });
 
 d3.json("/indicator_list.json", function(error, json) {
