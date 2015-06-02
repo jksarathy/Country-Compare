@@ -518,9 +518,12 @@ function drawLine(key, country){
 		else if (key == 2)
 			col = "#12E25C";
 
+		var extremes = lineChart.yAxis[0].getExtremes();
+		if (min > extremes.min) min = extremes.min;
+		if (max < extremes.max) max = extremes.max;
 		var range = max - min;
 
-		lineChart.yAxis[0].setExtremes(min, max + range/2);
+		lineChart.yAxis[0].setExtremes(min, max + range/5);
 		lineChart.yAxis[0].setTitle(subindicator.name);
 		lineChart.series[key].setData(dat, true);
 		lineChart.series[key].update({name: country, color: col}, true);
