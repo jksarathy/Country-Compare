@@ -520,8 +520,8 @@ function drawLine(key, country){
 
 		var range = max - min;
 
-		lineChart.yAxis[0].setExtremes(min, max);
-		lineChart.yAxis[0].setTitle({ text: subindicatorid.name });
+		lineChart.yAxis[0].setExtremes(min, max + range/2);
+		lineChart.yAxis[0].setTitle(subindicator.name);
 		lineChart.series[key].setData(dat, true);
 		lineChart.series[key].update({name: country, color: col}, true);
 
