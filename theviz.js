@@ -497,7 +497,7 @@ function drawLine(key, country){
 		
 		var dat = [];
 		var min = 0.0;
-		var max = 1.01;
+		var max = 0.0;
 		$.map(data, function(obj, i) {
 			var mark = false;
 			if (i == 0 || i == data.length-1) mark = true;
@@ -521,8 +521,10 @@ function drawLine(key, country){
 		var range = max - min;
 
 		lineChart.yAxis[0].setExtremes(min, max);
+		lineChart.yAxis[0].setTitle({ text: subindicatorid.name });
 		lineChart.series[key].setData(dat, true);
 		lineChart.series[key].update({name: country, color: col}, true);
+
 
 	});
 }
