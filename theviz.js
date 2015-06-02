@@ -488,17 +488,18 @@ function drawLine(key, country){
 			var val = parseFloat(obj.value);
 			if (isNaN(val)) val = null;
 			dat.push({x: parseInt(obj.year), y: val, marker: {enabled: mark}});
-	});
+		});
 	
-	var col = "";
-	if (key == 0)
-		col = "#26CBDA";
-	else if (key == 1)
-		col = "#FF9600";
-	else if (key == 2)
-		col = "#12E25C";
+		var col = "";
+		if (key == 0)
+			col = "#26CBDA";
+		else if (key == 1)
+			col = "#FF9600";
+		else if (key == 2)
+			col = "#12E25C";
 		
-	lineChart.series[key].update({name: country, color: col}, true);
+		lineChart.series[key].update({name: country, color: col}, true);
+	});
 }
 
 function drawSpark(country){
