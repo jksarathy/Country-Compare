@@ -528,7 +528,7 @@ function drawLine(key, country){
 		//lineChart.yAxis[0].setTitle(subindicator.name);
 		lineChart.yAxis[0].update({
                 title:{
-                    text: subindicator.name;
+                    text: subindicator.name
                 }
             });
 		lineChart.series[key].setData(dat, true);
