@@ -512,7 +512,7 @@ function drawLine(key, country){
 		else if (key == 2)
 			col = "#12E25C";
 
-		lineChart.yAxis[0].setExtremes(0,1.1);
+		lineChart.yAxis[0].setExtremes(0,0.04);
 		lineChart.series[key].setData(dat, true);
 		lineChart.series[key].update({name: country, color: col}, true);
 
