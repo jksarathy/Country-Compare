@@ -66,8 +66,11 @@ d3.json("/country_list.json", function(error, json) { // http://localhost/countr
     		//window.alert(d);
     		//drawRose(i,d);
     		drawLine(i,d);
-    		drawSpark(d);
+    		//drawSpark(d);
     	});
+
+    	sparkCountry = countryselection[0];
+    	drawSpark(sparkCountry)
 		
 		/*id = $(this)[0].id[1];
 		country = $(this)[0].value;
@@ -506,8 +509,10 @@ function drawLine(key, country){
 			col = "#FF9600";
 		else if (key == 2)
 			col = "#12E25C";
-		
+
+		lineChart.yAxis[0].setExtremes(0,1.1);
 		lineChart.series[key].update({name: country, color: col}, true);
+
 	});
 }
 
