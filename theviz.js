@@ -137,7 +137,7 @@ pie = d3.layout.pie()
 
 function runCharts() {
 	drawMap();
-	drawSpark(sparkCountry);
+	//drawSpark(sparkCountry);
 	initLine();
 	$.each(countryselection, function(i, d) {
     	drawLine(i,d);
@@ -441,7 +441,7 @@ function initLine(){
 	
 	lineChart = new Highcharts.Chart(options);
 	
-	for(var x=0; x<3; x++){
+	for(var x=0; x<countryselection.length; x++){
 		var empty = [];
 		for(var year = 2002; year<2013; year++)
 			empty.push({x: year, y: 0});
@@ -521,7 +521,7 @@ function drawLine(key, country){
 		//lineChart.yAxis[0].setTitle(subindicator.name);
 		lineChart.yAxis[0].update({
                 title:{
-                    text: subindicator.name
+                    text: subindicator.name.toUpperCase()
                 }
             });
 		lineChart.series[key].setData(dat, true);
