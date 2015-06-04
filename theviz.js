@@ -134,7 +134,7 @@ d3.json("/indicator_list.json", function(error, json) {
 		//var selected_id = $('#ind')[0].id;
 		var selected_id = subindicator.id;
 		window.alert(selected_id);
-		var group_num = $(selected_id).parent().attr("value");
+		var group_num = $(selected_id).parent().attr("value"); //not working yet
 		window.alert(group_num);
 		indicator = indicators[group_num];
 		runCharts();
@@ -224,7 +224,7 @@ function newMap(data){
 				[1, indicator.color]
 			]
 		},
-		chart: {
+		/*chart: {
             renderTo: 'container',
             events: {
                 load: function () {
@@ -240,7 +240,7 @@ function newMap(data){
                     }
                 }
             }
-        },
+        },*/
         series : [{
             data : data,
             mapData: Highcharts.maps['custom/world'],
@@ -434,10 +434,28 @@ function initRoses(){
 
 function initLine(){
 	var options = {
-		chart: {
+		/*chart: {
 			type: 'line',
 			renderTo: 'lineChart'
-		},
+		},*/
+		chart: {
+			type: 'line',
+            renderTo: 'lineChart',
+            events: {
+                load: function () {
+                    if (this.options.chart.forExport) {
+                        Highcharts.each(this.series, function (series) {
+                           	series.update({
+                                dataLabels: {
+                                    enabled: true
+                                }
+                            }, false);
+                        });
+                    	this.redraw();
+                    }
+                }
+            }
+        },
 		yAxis: {
 			min: 0,
 			max: 101,
