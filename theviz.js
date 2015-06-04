@@ -196,11 +196,12 @@ function drawGauge(key, country) {
 				plotBorderWidth: 0,
 				plotShadow: false,
 				backgroundColor: null,
+				margin: [0,0,0,0],
 				width: 300
 			},
-			/*title: {
-				text: subindicator.name + ', 2012'
-			},*/
+			title: {
+				text: null //subindicator.name + ', 2012'
+			},
 			pane: {
 				/*size:[30],
         		startAngle: -90,
