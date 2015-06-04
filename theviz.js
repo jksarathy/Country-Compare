@@ -114,18 +114,6 @@ d3.json("/country_list.json", function(error, json) { // http://localhost/countr
 	});
 });*/
 
-d3.json("/indicator_list.json", function(error, json) {
-	var indicators = json;
-	indicator = indicators[0];
-
-	$("#submit_button").click(function() {
-		var selected_id = $('#ind')[0].id;
-		var group_num = $(selected_id).parent().value;
-		indicator = indicators[group_num];
-		runCharts();
-	});
-});
-
 d3.json("/subindicator_list.json", function(error, json) {
 	var subindicators = json;
 	subindicator = subindicators[0];
@@ -133,6 +121,19 @@ d3.json("/subindicator_list.json", function(error, json) {
 	$("#submit_button").click(function() {
 		var selected_val = $('#ind')[0].value;
 		subindicator = subindicators[selected_val];
+		runCharts();
+	});
+});
+
+d3.json("/indicator_list.json", function(error, json) {
+	var indicators = json;
+	indicator = indicators[0];
+
+	$("#submit_button").click(function() {
+		//var selected_id = $('#ind')[0].id;
+		var selected_id = subindicator.id;
+		var group_num = $(selected_id).parent().value;
+		indicator = indicators[group_num];
 		runCharts();
 	});
 });
