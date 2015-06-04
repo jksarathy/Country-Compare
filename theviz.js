@@ -180,8 +180,8 @@ function runCharts() {
 }
 
 function drawGauge(key, country) {
-	window.alert(key);
-	window.alert(country);
+	//window.alert(key);
+	//window.alert(country);
 	html_id = "#table" + key;
 	d3.json("http://epi.yale.edu/api/raw_data.json?country=" + country + "&indicator=" + subindicator.id, function(error, json) {
 		var data = json.indicator_trend;
@@ -206,6 +206,7 @@ function drawGauge(key, country) {
         		endAngle: 90,*/
 				startAngle: -150,
 				endAngle: 150,
+				center: ['90%', '90%'],
 				background: [{
 					backgroundColor: {
 						linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
