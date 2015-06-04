@@ -479,7 +479,7 @@ function initLine(){
 			},
 		}
 	};
-	lineChart = new HighCharts.Chart(options);
+	lineChart = new Highcharts.Chart(options);
 	/*lineChart = new Highcharts.Chart(options, function(chart) {
 		this.renderer.image('/logo.png', 0, 0, 100, 100).add();
 	});*/
