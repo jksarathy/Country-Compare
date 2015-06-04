@@ -24,7 +24,13 @@ div {
 }
 
 th {
+  background-color: #909090;
+  color: white;
+}
+
+th, td {
   width: 500px;
+  margin: 20px;
   padding: 20px;
   border: 1px solid;
 }
