@@ -224,23 +224,17 @@ function newMap(data){
 				[1, indicator.color]
 			]
 		},
-		/*chart: {
-            renderTo: 'container',
+		chart: {
+            renderTo: 'map',
             events: {
                 load: function () {
                     if (this.options.chart.forExport) {
-                        Highcharts.each(this.series, function (series) {
-                           	series.update({
-                                dataLabels: {
-                                    enabled: true
-                                }
-                            }, false);
-                        });
+ 						this.renderer.image('/logo.png', 0, 0, 100, 100).add();
                     	this.redraw();
                     }
                 }
             }
-        },*/
+        },
         series : [{
             data : data,
             mapData: Highcharts.maps['custom/world'],
@@ -451,6 +445,7 @@ function initLine(){
                                 }
                             }, false);
                         });
+                        this.renderer.image('/logo.png', 0, 0, 100, 100).add();
                     	this.redraw();
                     }
                 }
