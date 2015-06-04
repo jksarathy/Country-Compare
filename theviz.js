@@ -479,8 +479,8 @@ function initLine(){
 			},
 		}
 	};
-	lineChart = new Highcharts.Chart(options, function(this) {
-		this.renderer.image('/logo.png', 0, 0, 96, 40).add();
+	lineChart = new Highcharts.Chart(options, function(chart) {
+		chart.renderer.image('/logo.png', 0, 0, 96, 40).add();
 	});
 	/*lineChart = new Highcharts.Chart(options, function(chart) {
 		this.renderer.image('/logo.png', 0, 0, 100, 100).add();
