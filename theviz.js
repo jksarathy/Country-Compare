@@ -436,7 +436,8 @@ function initLine(){
 			type: 'line',
             renderTo: 'lineChart',
             events: {
-                load: function () {
+                load: function (event) {
+                	this.renderer.image('/logo.png', 0, 0, 100, 100).add();
                     if (this.options.chart.forExport) {
                         Highcharts.each(this.series, function (series) {
                            	series.update({
@@ -478,8 +479,11 @@ function initLine(){
 			},
 		}
 	};
+	lineChart = new HighCharts.Chart(options);
+	/*lineChart = new Highcharts.Chart(options, function(chart) {
+		this.renderer.image('/logo.png', 0, 0, 100, 100).add();
+	});*/
 	
-	lineChart = new Highcharts.Chart(options);
 	
 	for(var x=0; x<countryselection.length; x++){
 		var empty = [];
