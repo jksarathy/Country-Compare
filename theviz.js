@@ -70,7 +70,7 @@ d3.json("/country_list.json", function(error, json) { // http://localhost/countr
 
 });
 
-d3.json("/indicator_list.json", function(error, json) {
+/*d3.json("/indicator_list.json", function(error, json) {
 	var indhtml = "";
 	var indicators = json;
 	
@@ -83,18 +83,19 @@ d3.json("/indicator_list.json", function(error, json) {
 	/*	$("#ind").change(function(){
 		indicator = indicators[$(this)[0].value];
 		initLine();
-	});*/
+	});
 	indicator = indicators[0];
 	$("#submit_button").click(function() {
 		indicator = indicators[$('#ind')[0].value];
 		runCharts();
 	});
-});
+});*/
 
-d3.json("/subindicator_list.json", function(error, json) {
+/*d3.json("/subindicator_list.json", function(error, json) {
 	var subindhtml = "";
 	var subindicators = json;
 	$.each(subindicators, function(i, obj){
+		var group = selected.parent().attr('label')
 		subindhtml += "<option value=" + i +">" + obj.name +"</option>"
 	});
 	$(".subind").append("<select id='subind'>" + subindhtml + "</select>");
@@ -105,14 +106,36 @@ d3.json("/subindicator_list.json", function(error, json) {
 		// This is the only way to handle the superscript using SVG subtitle and tooltip.
 		if (subindicator.shortunits == "Microg/m^3") subindicator.shortunits = "\xB5g/m\xB3";
 		drawSpark(sparkCountry);
-	});*/
+	});//
 	subindicator = subindicators[0];
 	$("#submit_button").click(function() {
 		subindicator = subindicators[$('#subind')[0].value];
 		runCharts();
 	});
-});
+});*/
 
+d3.json("/indicator_list.json", function(error, json) {
+	var indicators = json;
+	indicator = indicators[0];
+
+	$("#submit_button").click(function() {
+		var selected_id = $('#ind')[0].id;
+		var group_num = $(selected_id).parent().value;
+		indicator = indicators[group_num];
+		runCharts();
+	});
+});*/
+
+d3.json("/subindicator_list.json", function(error, json) {
+	var subindicators = json;
+	subindicator = subindicators[0];
+
+	$("#submit_button").click(function() {
+		var selected_val = $('#ind')[0].value;
+		subindicator = subindicators[selected_val];
+		runCharts();
+	});
+});
 
 // Indicator list setup
 $.each(issueColors, function(key, d) {

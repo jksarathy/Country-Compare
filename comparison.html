@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang="en"><head><title>EPI Country Comparator</title>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> <!--http-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> <!--http-->
 
-	<!--new stuff-->
-	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" /> <!--http-->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script> <!--http-->
-	<script type="text/javascript" src="bootstrap.js"></script>
-	<link href="bootstrap.min.css" rel="stylesheet">
-	<link href="//fonts.googleapis.com/css?family=Exo+2:100,600,300" rel="stylesheet" type="text/css"> <!--http-->
-	<link href="fstyle.css" rel="stylesheet">
-	<!--end new stuff-->
+<!--new stuff-->
+<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" /> <!--http-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script> <!--http-->
+<script type="text/javascript" src="bootstrap.js"></script>
+<link href="bootstrap.min.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Exo+2:100,600,300" rel="stylesheet" type="text/css"> <!--http-->
+<link href="fstyle.css" rel="stylesheet">
+<!--end new stuff-->
 
-	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.6/d3.min.js"></script> <!--http-->
-	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.js"></script> <!--http-->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.6/d3.min.js"></script> <!--http-->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.js"></script> <!--http-->
 
-	<!--Highcharts--> <!--http-->
-	<script src="//code.highcharts.com/highcharts.js"></script>
-	<script src="//code.highcharts.com/highcharts-more.js"></script>
-	<script src="//code.highcharts.com/maps/modules/map.js"></script>
-	<script src="//code.highcharts.com/mapdata/custom/world.js"></script>
-	<script src="//code.highcharts.com/modules/data.js"></script>
-	<script src="//code.highcharts.com/modules/exporting.js"></script>
-
-
-	<link href="//cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.css" rel="stylesheet"> <!--http-->
-	<link href="mystyle.css" rel="stylesheet">
-
-	<script type="text/javascript" src="vizvars.js"></script>
-	<script type="text/javascript" src="theviz.js"></script>
-	<script src="//canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> <!--http-->
-	<script src="//canvg.googlecode.com/svn/trunk/canvg.js"></script> <!--http-->
+<!--Highcharts--> <!--http-->
+<script src="//code.highcharts.com/highcharts.js"></script>
+<script src="//code.highcharts.com/highcharts-more.js"></script>
+<script src="//code.highcharts.com/maps/modules/map.js"></script>
+<script src="//code.highcharts.com/mapdata/custom/world.js"></script>
+<script src="//code.highcharts.com/modules/data.js"></script>
+<script src="//code.highcharts.com/modules/exporting.js"></script>
 
 
-	<script type="text/javascript">
-		runViz();
-	</script>
-	</head>
+<link href="//cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.css" rel="stylesheet"> <!--http-->
+<link href="mystyle.css" rel="stylesheet">
 
-	<body>
-		<!--<div class="navbar navbar-inverse" role="navigation"></div>-->
-		<div class="container">
-			<div class="title">
-				<h6>2014 EPI</h6>
-				<h2>Country Comparison</h2>
-				<p>The EPI Country Comparison tool allows users to dynamically explore data from custom-defined groups of countries. Try out this tool to compare performance of countries across time periods and in relation to specific environmental indicators.</p>
-			</div>
+<script type="text/javascript" src="vizvars.js"></script>
+<script type="text/javascript" src="theviz.js"></script>
+<script src="//canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> <!--http-->
+<script src="//canvg.googlecode.com/svn/trunk/canvg.js"></script> <!--http-->
+
+
+<script type="text/javascript">
+runViz();
+</script>
+</head>
+
+<body>
+	<!--<div class="navbar navbar-inverse" role="navigation"></div>-->
+	<div class="container">
+		<div class="title">
+			<h6>2014 EPI</h6>
+			<h2>Country Comparison</h2>
+			<p>The EPI Country Comparison tool allows users to dynamically explore data from custom-defined groups of countries. Try out this tool to compare performance of countries across time periods and in relation to specific environmental indicators.</p>
+		</div>
 			<!--<div class="row">
 				<div class="sel-title">Country #1
 				</div>
@@ -62,10 +62,50 @@
 				<div id="categories">
 					<div class="ind">
 						<h5>Indicator</h5>
+						<select>
+							<optgroup value=0 label="Health Impacts">
+								<option id="CHMORT" value=0>Child Mortality</option>
+							</optgroup>
+							<optgroup value=1 label="Air Quality">
+								<option id="HAP" value=1>Household Air Quality</option>
+								<option id="PM25" value=2>Air Pollution - Average Exposure to PM2.5</option>
+								<option id="PM25EXBL" value=3>Air Pollution - PM2.5 Exceedance</option>
+							</optgroup>
+							<optgroup value=2 label="Water and Sanitation">
+								<option id="WATSUP" value=4>Access to Drinking Water</option>
+								<option id="ACSAT" value=5>Access to Sanitation</option>
+							</optgroup>
+							<optgroup value=3 label="Water and Resources">
+								<option id="WASTECXN" value=6>Wastewater Treatment</option>
+							</optgroup>
+							<optgroup value=4 label="Agriculture">
+								<option id="AGSUB" value=7>Agricultural Subsidies</option>
+								<option id="POPS" value=8>Pesticide Regulation</option>
+							</optgroup>
+							<optgroup value=5 label="Forests">
+								<option id="FORCH" value=9>Change in Forest Cover</option>
+							</optgroup>
+							<optgroup value=6 label="Fisheries">
+								<option id="TCEEZ" value=10>Coastal Shelf Fishing Pressure</option>
+								<option id="FSOC" value=11>Fish Stocks</option>
+							</optgroup>
+							<optgroup value=7 label="Biodiversity and Habitat">
+								<option id="PACOVD" value=12>Terrestrial Protected Areas (National Biome Weights)</option>
+								<option id="PACOVW" value=13>Terrestrial Protected Areas (Global Biome Weights)</option>
+								<option id="MPAEEZ" value=14>Marine Protected Areas</option>
+								<option id="AZE" value=15>Critical Habitat Protection</option>
+							</optgroup>
+							<optgroup value=8 label="Climate and Energy">
+								<option id="CO2GDPd1" value=16>Trend in Carbon Intensity</option>
+								<option id="CO2GDPd2" value=17>Change of Trend in Carbon Intensity</option>
+								<option id="ACCESS" value=18>Access to Electricity</option>
+								<option id="CO2KWH" value=19>Trend in CO2 Emissions per kWh</option>
+							</optgroup>
+						</select>
 					</div>
-					<div class="subind">
+					<!--<div class="subind">
 						<h5>Subindicator</h5>
-					</div>
+					</div>-->
 				</div>
 
 				<input id='submit_button' type='submit' value='Generate Charts'/>
@@ -82,13 +122,13 @@
 
 			<!--
 			<div id="leg"></div>
-			-->
+		-->
 			<!--
 			<img src="./indicators.png" style="padding: 20px;"/>
-			-->
-		</div>
-	</body>
+		-->
+	</div>
+</body>
 </html>
-    
-    
-    
+
+
+

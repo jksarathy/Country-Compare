@@ -1,0 +1,213 @@
+[
+    //Health Impacts
+    {
+        "id": "EH_HealthImpacts",
+        "name": "Health Impacts",
+        "color": "#ff9600",
+        "type": "policy"
+    },
+    {
+        "name": "Child Mortality",
+        "id": "CHMORT",
+        "units": "Probability",
+        "shortunits": "",
+        "type": "indicator"
+    },
+
+    //Air Quality
+    {
+        "id": "EH_AirQuality",
+        "name": "Air Quality",
+        "color": "#f7c80b",
+        "type": "policy"
+    },
+    {
+        "name": "Household Air Quality",
+        "id": "HAP",
+        "units": "Percentage",
+        "shortunits": "%",
+        "type": "indicator"
+    },
+    {
+        "name": "Air Pollution - Average Exposure to PM2.5",
+        "id": "PM25",
+        "units": "Micrograms/m^3",
+        "shortunits": "Microg/m^3",
+        "type": "indicator"
+    },
+    {
+        "name": "Air Pollution - PM2.5 Exceedance",
+        "id": "PM25EXBL",
+        "units": "Proportion",
+        "shortunits": "",
+        "type": "indicator"
+    },
+
+    //Water Sanitation
+    {
+        "id": "EH_WaterSanitation",
+        "name": "Water and Sanitation",
+        "color": "#ff6d24",
+        "type": "policy"
+    },
+    {
+        "name": "Access to Drinking Water",
+        "id": "WATSUP",
+        "units": "Percentage",
+        "shortunits": "%",
+        "type": "indicator"
+    },
+    {
+        "name": "Access to Sanitation",
+        "id": "ACSAT",
+        "units": "Percentage",
+        "shortunits": "%",
+        "type": "indicator"
+    },
+
+    //Water Resources
+    {
+        "id": "EV_WaterResources",
+        "name": "Water and Resources",
+        "color": "#7993f2",
+        "type": "policy"
+    },
+    {
+        "name": "Wastewater Treatment",
+        "id": "WASTECXN",
+        "units": "Percentage",
+        "shortunits": "%",
+        "type": "indicator"
+    },
+
+    //Agriculture
+    {
+        "id": "EV_Agriculture",
+        "name": "Agriculture",
+        "color": "#2e74ba",
+        "type": "policy"
+    },
+    {
+        "name": "Agricultural Subsidies",
+        "id": "AGSUB",
+        "units": "Percentage",
+        "shortunits": "%",
+        "type": "indicator"
+    },
+    {
+        "name": "Pesticide Regulation",
+        "id": "POPS",
+        "units": "(Out of 25 points)",
+        "shortunits": "(Out of 25)",
+        "type": "indicator"
+    },
+
+    //Forests
+    {
+        "id": "EV_Forests",
+        "name": "Forests",
+        "color": "#009bcc",
+        "type": "policy"
+    },
+    {
+        "name": "Change in Forest Cover",
+        "id": "FORCH",
+        "units": "Percentage",
+        "shortunits": "%",
+        "type": "indicator"
+    },
+
+    //Fisheries
+    {
+        "id": "EV_Fisheries",
+        "name": "Fisheries",
+        "color": "#008c8c",
+        "type": "policy"
+    },
+    {
+        "name": "Coastal Shelf Fishing Pressure",
+        "id": "TCEEZ",
+        "units": "Proportion",
+        "shortunits": "",
+        "type": "indicator"
+    },
+    {
+        "name": "Fish Stocks",
+        "id": "FSOC",
+        "units": "Proportion",
+        "shortunits": "",
+        "type": "indicator"
+    },
+
+    //Biodiversity Habitat
+    {
+        "id": "EV_BiodiversityHabitat",
+        "name": "Biodiversity and Habitat",
+        "color": "#00ccaa",
+        "type": "policy"
+    },
+    {
+        "name": "Terrestrial Protected Areas (National Biome Weights)",
+        "id": "PACOVD",
+        "units": "Percentage",
+        "shortunits": "%",
+        "type": "indicator"
+    },
+    {
+        "name": "Terrestrial Protected Areas (Global Biome Weights)",
+        "id": "PACOVW",
+        "units": "Percentage",
+        "shortunits": "%",
+        "type": "indicator"
+    },
+    {
+        "name": "Marine Protected Areas",
+        "id": "MPAEEZ",
+        "units": "Percentage",
+        "shortunits": "%",
+        "type": "indicator"
+    },
+    {
+        "name": "Critical Habitat Protection",
+        "id": "AZE",
+        "units": "Percentage",
+        "shortunits": "%",
+        "type": "indicator"
+    },
+
+    //Climate Energy
+    {
+        "id": "EV_ClimateEnergy",
+        "name": "Climate and Energy",
+        "color": "#1cb85d",
+        "type": "policy"
+    }
+    {
+        "name": "Trend in Carbon Intensity",
+        "id": "CO2GDPd1",
+        "units": "kg CO2/GDP",
+        "shortunits": "kg CO2/GDP",
+        "type": "indicator"
+    },
+    {
+        "name": "Change of Trend in Carbon Intensity",
+        "id": "CO2GDPd2",
+        "units": "kg CO2/GDP",
+        "shortunits": "kg CO2/GDP",
+        "type": "indicator"
+    },
+    {
+        "name": "Access to Electricity",
+        "id": "ACCESS",
+        "units": "Percentage",
+        "shortunits": "%",
+        "type": "indicator"
+    },
+    {
+        "name": "Trend in CO2 Emissions per kWh",
+        "id": "CO2KWH",
+        "units": "kg CO2/kWh",
+        "shortunits": "kg CO2/kWh",
+        "type": "indicator"
+    }
+]
