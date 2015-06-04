@@ -119,7 +119,7 @@ d3.json("/subindicator_list.json", function(error, json) {
 	subindicator = subindicators[0];
 
 	$("#submit_button").click(function() {
-		var selected_val = $("#ind").val();
+		var selected_val = $("#select_ind").val();
 		window.alert(selected_val);
 		subindicator = subindicators[selected_val];
 		runCharts();
