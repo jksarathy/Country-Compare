@@ -120,6 +120,7 @@ d3.json("/subindicator_list.json", function(error, json) {
 
 	$("#submit_button").click(function() {
 		var selected_val = $("#ind").val();
+		window.alert(selected_val);
 		subindicator = subindicators[selected_val];
 		runCharts();
 	});
@@ -132,7 +133,9 @@ d3.json("/indicator_list.json", function(error, json) {
 	$("#submit_button").click(function() {
 		//var selected_id = $('#ind')[0].id;
 		var selected_id = subindicator.id;
+		window.alert(selected_id);
 		var group_num = $(selected_id).parent().val();
+		window.alert(group_num);
 		indicator = indicators[group_num];
 		runCharts();
 	});
