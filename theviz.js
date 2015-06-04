@@ -437,7 +437,7 @@ function initLine(){
             renderTo: 'lineChart',
             events: {
                 load: function () {
-                	this.renderer.image('/logo.png', 0, 0, 96, 40).add();
+                	//this.renderer.image('/logo.png', 0, 0, 96, 40).add();
                     if (this.options.chart.forExport) {
                         Highcharts.each(this.series, function (series) {
                            	series.update({
