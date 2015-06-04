@@ -194,7 +194,8 @@ function drawGauge(key, country) {
 				plotBackgroundImage: null,
 				plotBorderWidth: 0,
 				plotShadow: false,
-				margin: [0, 0, 0, 0]
+				margin: [0, 0, 0, 0],
+				width: 300
 			},
 			title: {
 				text: subindicator.name + ', 2012'
@@ -206,7 +207,7 @@ function drawGauge(key, country) {
         		endAngle: 90,*/
 				startAngle: -150,
 				endAngle: 150,
-				center: ['90%', '90%'],
+				center: ['50%', '50%'],
 				background: [{
 					backgroundColor: {
 						linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
