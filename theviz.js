@@ -121,7 +121,7 @@ d3.json("/subindicator_list.json", function(error, json) {
 
 	$("#submit_button").click(function() {
 		var selected_val = $("#select_ind").val();
-		window.alert(selected_val);
+		//window.alert(selected_val);
 		subindicator = subindicators[selected_val];
 		runCharts();
 	});
@@ -134,9 +134,9 @@ d3.json("/indicator_list.json", function(error, json) {
 	$("#submit_button").click(function() {
 		//var selected_id = $('#ind')[0].id;
 		var selected_id = subindicator.id;
-		window.alert(selected_id);
+		//window.alert(selected_id);
 		var group_num = $(selected_id).parent().attr("value"); //not working yet
-		window.alert(group_num);
+		//window.alert(group_num);
 		indicator = indicators[group_num];
 		runCharts();
 	});
@@ -180,41 +180,101 @@ function runCharts() {
 }
 
 function drawGauge(key, country) {
+	window.alert(key);
+	window.alert(country);
 	html_id = "#table" + key;
 	d3.json("http://epi.yale.edu/api/raw_data.json?country=" + country + "&indicator=" + subindicator.id, function(error, json) {
 		var data = json.indicator_trend;
 		var dat = [data[22].value]
+
 		$(html_id).highcharts({
 			chart: {
 				type: 'gauge',
-				title: '2012'
+				plotBackgroundColor: null,
+				plotBackgroundImage: null,
+				plotBorderWidth: 0,
+				plotShadow: false
+			},
+			title: {
+				text: subindicator.name + ', 2012'
 			},
 			pane: {
 				startAngle: -150,
-				endAngle: 150
-			},
-			yAxis: {
-				min: 0,
-				max: max_val
-			},
-			plotOptions: {
-				gauge: {
-					dial: {
-						radius: '100%',
-						backgroundColor: 'silver',
-						borderColor: 'black',
-						borderWidth: 1,
-						baseWidth: 10,
-						topWidth: 1,
-                    baseLength: '90%', // of radius
-                    rearLength: '50%'
-                	}
-            	}
+				endAngle: 150,
+				background: [{
+					backgroundColor: {
+						linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+						stops: [
+						[0, '#FFF'],
+						[1, '#333']
+						]
+					},
+					borderWidth: 0,
+					outerRadius: '109%'
+				}, {
+					backgroundColor: {
+						linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+						stops: [
+						[0, '#333'],
+						[1, '#FFF']
+						]
+					},
+					borderWidth: 1,
+					outerRadius: '107%'
+				}, {
+                // default background
+            }, {
+            	backgroundColor: '#DDD',
+            	borderWidth: 0,
+            	outerRadius: '105%',
+            	innerRadius: '103%'
+            	}]	
         	},
-        	series: [{
-        		data: dat
-        	}]
+        	// the value axis
+        	yAxis: {
+        		min: 0,
+        		max: max_val,
 
+        		minorTickInterval: 'auto',
+        		minorTickWidth: 1,
+        		minorTickLength: 10,
+        		minorTickPosition: 'inside',
+        		minorTickColor: '#666',
+
+        		tickPixelInterval: 30,
+        		tickWidth: 2,
+        		tickPosition: 'inside',
+        		tickLength: 10,
+        		tickColor: '#666',
+        		labels: {
+        			step: 2,
+        			rotation: 'auto'
+        		},
+        		title: {
+        			text: subindicator.shortunits
+        		},
+        		plotBands: [{
+        			from: 0,
+        			to: .001,
+               	 color: '#55BF3B' // green
+            	}, {
+            		from: .001,
+            		to: .002,
+               	 	color: '#DDDF0D' // yellow
+            	}, {
+            		from: .002,
+            		to: .003,
+                	color: '#DF5353' // red
+            	}]
+        	},
+
+        	series: [{
+        		name: 'Speed',
+        		data: dat,
+        		tooltip: {
+        			valueSuffix: subindicator.shortunits
+        		}
+        	}]
     	});
 	});
 }
