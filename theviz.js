@@ -174,14 +174,14 @@ function runCharts() {
 	initLine();
 	$.each(countryselection, function(i, d) {
     	drawLine(i,d);
-    	addTable(d);
+    	addTable(i, d);
     	drawGauge(i, d);
     });
 }
 
 function drawGauge(key, country) {
 	html_id = "#table" + key;
-	d3.json("http://epi.yale.edu/api/raw_data.json?country=" + country + "&indicator=" + subindicatorid, function(error, json) {
+	d3.json("http://epi.yale.edu/api/raw_data.json?country=" + country + "&indicator=" + subindicator.id, function(error, json) {
 		var data = json.indicator_trend;
 		var dat = [data[22].value]
 		$(html_id).highcharts({
