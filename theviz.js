@@ -216,10 +216,10 @@ function drawGauge(key, country) {
         	}]
 
     	});
-	}
+	});
 }
 
-function newGauge(data){
+/*function newGauge(data){
 	var empty = {
 		title : {
             text: indicator.name
@@ -240,7 +240,7 @@ function newGauge(data){
         },
     };
     return empty;
-}
+}*/
 
 function drawMap(){
 	var data = [];
