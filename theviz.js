@@ -124,7 +124,7 @@ d3.json("/indicator_list.json", function(error, json) {
 		indicator = indicators[group_num];
 		runCharts();
 	});
-});*/
+});
 
 d3.json("/subindicator_list.json", function(error, json) {
 	var subindicators = json;
