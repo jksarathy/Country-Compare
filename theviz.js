@@ -164,7 +164,7 @@ pie = d3.layout.pie()
 });
 
 function addTable(i, country) {
-	var table_html = "<tr> <td id='table" + i + "'></td> <td>" + country + "</td> <td>Indicator Score</td> <td>Policy Issue Score</td> </tr>";
+	var table_html = "<tr> <td class='gauge-charts' id='table" + i + "'></td> <td>" + country + "</td> <td>Indicator Score</td> <td>Policy Issue Score</td> </tr>";
 	$("#chartTable").append(table_html);
 }
 
