@@ -437,7 +437,7 @@ function initLine(){
             renderTo: 'lineChart',
             events: {
                 load: function (event) {
-                	this.renderer.image('/logo.png', 0, 0, 96, 40).add();
+                	this.renderer.image('http://logo.png', 0, 0, 96, 40).add();
                     if (this.options.chart.forExport) {
                         Highcharts.each(this.series, function (series) {
                            	series.update({
@@ -446,7 +446,7 @@ function initLine(){
                                 }
                             }, false);
                         });
-                        this.renderer.image('/logo.png', 0, 0, 100, 100).add();
+                        this.renderer.image('http://logo.png', 0, 0, 100, 100).add();
                     	this.redraw();
                     }
                 }
@@ -480,7 +480,7 @@ function initLine(){
 		}
 	};
 	lineChart = new Highcharts.Chart(options, function(chart) {
-		chart.renderer.image('/logo.png', 0, 0, 96, 40).add();
+		chart.renderer.image('http://logo.png', 0, 0, 96, 40).add();
 	});
 	/*lineChart = new Highcharts.Chart(options, function(chart) {
 		this.renderer.image('/logo.png', 0, 0, 100, 100).add();
