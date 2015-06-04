@@ -193,7 +193,7 @@ function drawGauge(key, country) {
 				plotBackgroundColor: null,
 				plotBackgroundImage: null,
 				plotBorderWidth: 0,
-				plotShadow: false
+				plotShadow: false,
 				margin: [0, 0, 0, 0]
 			},
 			title: {
