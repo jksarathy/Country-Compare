@@ -199,8 +199,12 @@ function drawGauge(key, country) {
 				text: subindicator.name + ', 2012'
 			},
 			pane: {
-				startAngle: -150,
-				endAngle: 150,
+				size:[30],
+        		startAngle: -90,
+        		center: ['50%', '90%'],
+        		endAngle: 90,
+				//startAngle: -150,
+				//endAngle: 150,
 				background: [{
 					backgroundColor: {
 						linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
@@ -255,15 +259,15 @@ function drawGauge(key, country) {
         		},
         		plotBands: [{
         			from: 0,
-        			to: .001,
+        			to: (max_val / 2),
                	 color: '#55BF3B' // green
             	}, {
-            		from: .001,
-            		to: .002,
+            		from: (max_val / 2),
+            		to: (max_val / 6) * 5,
                	 	color: '#DDDF0D' // yellow
             	}, {
-            		from: .002,
-            		to: .003,
+            		from: (max_val / 6) * 5,
+            		to: max_val,
                 	color: '#DF5353' // red
             	}]
         	},
