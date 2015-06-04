@@ -186,7 +186,7 @@ function drawGauge(key, country) {
 	d3.json("http://epi.yale.edu/api/raw_data.json?country=" + country + "&indicator=" + subindicator.id, function(error, json) {
 		var data = json.indicator_trend;
 		var dat = [data[22].value];
-		window.alert(dat);
+		//window.alert(dat);
 
 		$(html_id).highcharts({
 			chart: {
@@ -198,9 +198,9 @@ function drawGauge(key, country) {
 				backgroundColor: null,
 				width: 300
 			},
-			title: {
+			/*title: {
 				text: subindicator.name + ', 2012'
-			},
+			},*/
 			pane: {
 				/*size:[30],
         		startAngle: -90,
