@@ -119,7 +119,7 @@ d3.json("/subindicator_list.json", function(error, json) {
 	subindicator = subindicators[0];
 
 	$("#submit_button").click(function() {
-		var selected_val = $('#ind')[0].value;
+		var selected_val = $("#ind").val();
 		subindicator = subindicators[selected_val];
 		runCharts();
 	});
@@ -132,7 +132,7 @@ d3.json("/indicator_list.json", function(error, json) {
 	$("#submit_button").click(function() {
 		//var selected_id = $('#ind')[0].id;
 		var selected_id = subindicator.id;
-		var group_num = $(selected_id).parent().value;
+		var group_num = $(selected_id).parent().val();
 		indicator = indicators[group_num];
 		runCharts();
 	});
