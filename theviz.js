@@ -134,7 +134,7 @@ d3.json("/indicator_list.json", function(error, json) {
 		//var selected_id = $('#ind')[0].id;
 		var selected_id = subindicator.id;
 		window.alert(selected_id);
-		var group_num = $(selected_id).parent().val();
+		var group_num = $(selected_id).parent().attr("value");
 		window.alert(group_num);
 		indicator = indicators[group_num];
 		runCharts();
