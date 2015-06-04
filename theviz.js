@@ -26,6 +26,7 @@ var sparkChart;
 var sparkCountry ="CHN";
 
 var map;
+var max_val = 1;
 
 runCharts();
 
@@ -162,13 +163,83 @@ pie = d3.layout.pie()
     return 1;
 });
 
+function addTable(i, country) {
+	var table_html = "<tr> <td id='table" + i + "'></td> <td>" + country + "</td> <td>Indicator Score</td> <td>Policy Issue Score</td> </tr>";
+	$("#chartTable").append(table_html);
+}
+
 function runCharts() {
 	drawMap();
 	//drawSpark(sparkCountry);
 	initLine();
 	$.each(countryselection, function(i, d) {
     	drawLine(i,d);
+    	addTable(d);
+    	drawGauge(i, d);
     });
+}
+
+function drawGauge(key, country) {
+	html_id = "#table" + key;
+	d3.json("http://epi.yale.edu/api/raw_data.json?country=" + country + "&indicator=" + subindicatorid, function(error, json) {
+		var data = json.indicator_trend;
+		var dat = [data[22].value]
+		$(html_id).highcharts({
+			chart: {
+				type: 'gauge',
+				title: '2012'
+			},
+			pane: {
+				startAngle: -150,
+				endAngle: 150
+			},
+			yAxis: {
+				min: 0,
+				max: max_val
+			},
+			plotOptions: {
+				gauge: {
+					dial: {
+						radius: '100%',
+						backgroundColor: 'silver',
+						borderColor: 'black',
+						borderWidth: 1,
+						baseWidth: 10,
+						topWidth: 1,
+                    baseLength: '90%', // of radius
+                    rearLength: '50%'
+                	}
+            	}
+        	},
+        	series: [{
+        		data: dat
+        	}]
+
+    	});
+	}
+}
+
+function newGauge(data){
+	var empty = {
+		title : {
+            text: indicator.name
+        },
+        mapNavigation: {
+            enabled: true,
+        },
+		chart: {
+            renderTo: 'maincontainer',
+            events: {
+                load: function () {
+                    if (this.options.chart.forExport) {
+ 						this.renderer.image('/logo.png', 0, 0, 100, 100).add();
+                    	this.redraw();
+                    }
+                }
+            }
+        },
+    };
+    return empty;
 }
 
 function drawMap(){
@@ -560,6 +631,8 @@ function drawLine(key, country){
 		var extremes = lineChart.yAxis[0].getExtremes();
 		if (min > extremes.dataMin) min = extremes.dataMin;
 		if (max < extremes.dataMax) max = extremes.dataMax;
+		max_val = max;
+
 		var range = max - min;
 
 		lineChart.yAxis[0].setExtremes(min, max + range/5);

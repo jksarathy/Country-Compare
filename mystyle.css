@@ -23,8 +23,14 @@ div {
   margin: 5px;
 }
 
+th {
+  width: 500px;
+  padding: 20px;
+  border: 1px solid;
+}
+
 .container {
-  width: 60%;
+  width: 70%;
   height: 100%;
   margin: 0 auto;
   padding: 0;
@@ -40,7 +46,7 @@ div {
   margin-bottom: 25px;
 }
 
-.map, .sparkChart, .lineChart, .maincontainer {
+.map, .lineChart, .maincontainer {
   background: #FFFFFF;
   box-shadow: 2px 2px 2px #939396;
 }
@@ -95,9 +101,9 @@ input {
 
 }
 
-#linechart {
+/*#linechart {
     height: 300px;
-}
+}*/
 
 
 /* OTHERS MIGHT DELETE */
