@@ -20,11 +20,11 @@ h6 {
 
 div {
   /*border: 1px solid;*/
-  margin: 5px;
+  margin: 20px;
 }
 
 th {
-  background-color: #909090;
+  background-color: #C0C0C0;
   color: white;
 }
 
@@ -32,7 +32,7 @@ th, td {
   width: 500px;
   margin: 20px;
   padding: 20px;
-  border: 1px solid;
+  border: 1px #C0C0C0 solid;
 }
 
 .container {
