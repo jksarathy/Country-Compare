@@ -330,7 +330,7 @@ function drawRichMap() {
 
     	var points = mapChart.getSelectedPoints();
 
-    	if (points.length) {
+    /*	if (points.length) {
     		if (points.length === 1) {
     			$('#info h2').html(points[0].name);
     		} else {
@@ -339,7 +339,7 @@ function drawRichMap() {
     		}
     		$('#info .subheader').html('<h4>Historical population</h4><small><em>Shift + Click on map to compare countries</em></small>')
 
-    	/*	if (!countryChart) {
+    		if (!countryChart) {
     			countryChart = $('#country-chart').highcharts({
     				chart: {
     					height: 250,
@@ -387,19 +387,19 @@ function drawRichMap() {
                     /*$.each(countries[this.code3].data, function (pointI, value) {
                             countryChart.series[i].points[pointI].update(value, false);
                         });
-    		countryChart.series[i].update({
-    			name: this.name,
-    			data: countries[this.code3].data,
-    			type: points.length > 1 ? 'line' : 'area'
-    		}, false);
-    	} else {
-    		countryChart.addSeries({
-    			name: this.name,
-    			data: countries[this.code3].data,
-    			type: points.length > 1 ? 'line' : 'area'
-    		}, false);
-    	}
-    }); 
+    				countryChart.series[i].update({
+    					name: this.name,
+    					data: countries[this.code3].data,
+    					type: points.length > 1 ? 'line' : 'area'
+    				}, false);
+    			} else {
+    				countryChart.addSeries({
+    					name: this.name,
+    					data: countries[this.code3].data,
+    					type: points.length > 1 ? 'line' : 'area'
+    				}, false);
+    			}
+    		}); 
     		while (countryChart.series.length > points.length) {
     			countryChart.series[countryChart.series.length - 1].remove(false);
     		}
@@ -411,8 +411,8 @@ function drawRichMap() {
     		if (countryChart) {
     			countryChart = countryChart.destroy();
     		}
-    	}
-    }); */
+    	} */
+    }); 
     // Initiate the map chart
     console.log(data, mapData);
     mapChart = $('#map').highcharts('Map', {
