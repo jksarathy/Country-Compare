@@ -632,11 +632,11 @@ function testMap() {
                 if (countryChart) {
                     countryChart = countryChart.destroy();
                 }
-            }
+            }*/
 
             
 
-        }); */
+        }); 
         
         // Initiate the map chart
         mapChart = $('#map').highcharts('Map', {
