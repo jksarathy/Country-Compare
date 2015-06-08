@@ -169,7 +169,7 @@ function addTable(i, country) {
 }
 
 function runCharts() {
-	drawRichMap;
+	drawRichMap();
 	//drawMap();
 	//drawSpark(sparkCountry);
 	initLine();
@@ -460,6 +460,7 @@ function drawRichMap() {
     	}]
     }).highcharts();
 }
+
 
 function drawMap(){
 	var data = [];
