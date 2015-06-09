@@ -1,47 +1,122 @@
 [
     {
-        "id": "EH_HealthImpacts",
-        "name": "Health Impacts",
-        "color": "#ff9600"
+        "name": "Child Mortality",
+        "id": "CHMORT",
+        "units": "Probability",
+        "shortunits": ""
     },
     {
-        "id": "EH_AirQuality",
-        "name": "Air Quality",
-        "color": "#f7c80b"
+        "name": "Household Air Quality",
+        "id": "HAP",
+        "units": "Percentage",
+        "shortunits": "%"
     },
     {
-        "id": "EH_WaterSanitation",
-        "name": "Water and Sanitation",
-        "color": "#ff6d24"
+        "name": "Air Pollution - Average Exposure to PM2.5",
+        "id": "PM25",
+        "units": "Micrograms/m^3",
+        "shortunits": "Microg/m^3"
     },
     {
-        "id": "EV_WaterResources",
-        "name": "Water and Resources",
-        "color": "#7993f2"
+        "name": "Air Pollution - PM2.5 Exceedance",
+        "id": "PM25EXBL",
+        "units": "Proportion",
+        "shortunits": ""
     },
     {
-        "id": "EV_Agriculture",
-        "name": "Agriculture",
-        "color": "#2e74ba"
+        "name": "Access to Drinking Water",
+        "id": "WATSUP",
+        "units": "Percentage",
+        "shortunits": "%"
     },
     {
-        "id": "EV_Forests",
-        "name": "Forests",
-        "color": "#009bcc"
+        "name": "Access to Sanitation",
+        "id": "ACSAT",
+        "units": "Percentage",
+        "shortunits": "%"
     },
     {
-        "id": "EV_Fisheries",
-        "name": "Fisheries",
-        "color": "#008c8c"
+        "name": "Wastewater Treatment",
+        "id": "WASTECXN",
+        "units": "Percentage",
+        "shortunits": "%"
     },
     {
-        "id": "EV_BiodiversityHabitat",
-        "name": "Biodiversity and Habitat",
-        "color": "#00ccaa"
+        "name": "Agricultural Subsidies",
+        "id": "AGSUB",
+        "units": "Percentage",
+        "shortunits": "%"
     },
     {
-        "id": "EV_ClimateEnergy",
-        "name": "Climate and Energy",
-        "color": "#1cb85d"
+        "name": "Pesticide Regulation",
+        "id": "POPS",
+        "units": "(Out of 25 points)",
+        "shortunits": "(Out of 25)"
+    },
+    {
+        "name": "Change in Forest Cover",
+        "id": "FORCH",
+        "units": "Percentage",
+        "shortunits": "%"
+    },
+    {
+        "name": "Coastal Shelf Fishing Pressure",
+        "id": "TCEEZ",
+        "units": "Proportion",
+        "shortunits": ""
+    },
+    {
+        "name": "Fish Stocks",
+        "id": "FSOC",
+        "units": "Proportion",
+        "shortunits": ""
+    },
+    {
+        "name": "Terrestrial Protected Areas (National Biome Weights)",
+        "id": "PACOVD",
+        "units": "Percentage",
+        "shortunits": "%"
+    },
+    {
+        "name": "Terrestrial Protected Areas (Global Biome Weights)",
+        "id": "PACOVW",
+        "units": "Percentage",
+        "shortunits": "%"
+    },
+    {
+        "name": "Marine Protected Areas",
+        "id": "MPAEEZ",
+        "units": "Percentage",
+        "shortunits": "%"
+    },
+    {
+        "name": "Critical Habitat Protection",
+        "id": "AZE",
+        "units": "Percentage",
+        "shortunits": "%"
+    },
+    {
+        "name": "Trend in Carbon Intensity",
+        "id": "CO2GDPd1",
+        "units": "kg CO2/GDP",
+        "shortunits": "kg CO2/GDP"
+    },
+    {
+        "name": "Change of Trend in Carbon Intensity",
+        "id": "CO2GDPd2",
+        "units": "kg CO2/GDP",
+        "shortunits": "kg CO2/GDP"
+    },
+    {
+        "name": "Access to Electricity",
+        "id": "ACCESS",
+        "units": "Percentage",
+        "shortunits": "%"
+    },
+    {
+        "name": "Trend in CO2 Emissions per kWh",
+        "id": "CO2KWH",
+        "units": "kg CO2/kWh",
+        "shortunits": "kg CO2/kWh"
     }
 ]

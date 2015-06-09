@@ -15,8 +15,8 @@ var main = d3.select('#maincontainer');
 var countryselection = ["CHN","IND","USA"] ; 
 var url = "";
 
-var indicator = {id: "EH_HealthImpacts", name: "Health Impacts", color: "#ff9600"};
-var subindicator = {name: "Child Mortality", id: "CHMORT", units: "Probability", shortunits: ""};
+var issue = {id: "EH_HealthImpacts", name: "Health Impacts", color: "#ff9600"};
+var indicator = {name: "Child Mortality", id: "CHMORT", units: "Probability", shortunits: ""};
 
 var roseCharts = [];
 
@@ -71,65 +71,22 @@ d3.json("/country_list.json", function(error, json) { // http://localhost/countr
 
 });
 
-/*d3.json("/indicator_list.json", function(error, json) {
-	var indhtml = "";
-	var indicators = json;
-	
-	$.each(json, function(i, ind){
-		indhtml += "<option value=" + i +">" + ind.name +"</option>"
-	});
-	$(".ind").append("<select id='ind'>" + indhtml + "</select>");
-	$(".ind option[value='EH_HealthImpacts']").prop('selected', true);
-	
-	/*	$("#ind").change(function(){
-		indicator = indicators[$(this)[0].value];
-		initLine();
-	});
-	indicator = indicators[0];
-	$("#submit_button").click(function() {
-		indicator = indicators[$('#ind')[0].value];
-		runCharts();
-	});
-});*/
-
-/*d3.json("/subindicator_list.json", function(error, json) {
-	var subindhtml = "";
-	var subindicators = json;
-	$.each(subindicators, function(i, obj){
-		var group = selected.parent().attr('label')
-		subindhtml += "<option value=" + i +">" + obj.name +"</option>"
-	});
-	$(".subind").append("<select id='subind'>" + subindhtml + "</select>");
-	$(".ind option[value='CHMORT']").prop('selected', true);
-	
-	/*$("#subind").change(function(){
-		subindicator = subindicators[$(this)[0].value];
-		// This is the only way to handle the superscript using SVG subtitle and tooltip.
-		if (subindicator.shortunits == "Microg/m^3") subindicator.shortunits = "\xB5g/m\xB3";
-		drawSpark(sparkCountry);
-	});//
-	subindicator = subindicators[0];
-	$("#submit_button").click(function() {
-		subindicator = subindicators[$('#subind')[0].value];
-		runCharts();
-	});
-});*/
-
-d3.json("/subindicator_list.json", function(error, json) {
-	var subindicators = json;
-	subindicator = subindicators[0];
-
-	$("#submit_button").click(function() {
-		var selected_val = $("#select_ind").val();
-		//window.alert(selected_val);
-		subindicator = subindicators[selected_val];
-		runCharts();
-	});
-});
 
 d3.json("/indicator_list.json", function(error, json) {
 	var indicators = json;
 	indicator = indicators[0];
+
+	$("#submit_button").click(function() {
+		var selected_val = $("#select_ind").val();
+		//window.alert(selected_val);
+		indicator = indicators[selected_val];
+		runCharts();
+	});
+});
+
+d3.json("/issue_list.json", function(error, json) {
+	var issues = json;
+	issue = issues[0];
 
 	$("#submit_button").click(function() {
 		//var selected_id = $('#ind')[0].id;
@@ -137,12 +94,12 @@ d3.json("/indicator_list.json", function(error, json) {
 		//window.alert(selected_id);
 		var group_num = $(selected_id).parent().attr("value"); //not working yet
 		//window.alert(group_num);
-		indicator = indicators[group_num];
+		issue = issues[group_num];
 		runCharts();
 	});
 });
 
-// Indicator list setup
+// Issue list setup
 $.each(issueColors, function(key, d) {
     d3.select("#leg")
     .append("div").attr("id", key).attr("class", "leg").style("background", issueColors[key])
@@ -177,7 +134,8 @@ function runCharts() {
 	$.each(countryselection, function(i, d) {
     	drawLine(i,d);
     	addTable(i, d);
-    	drawGauge(i, d);
+    	//drawGauge(i, d);
+    	drawRose(i, d);
     });
 }
 
@@ -725,7 +683,7 @@ function drawMap(){
 function newMap(data){
 	var empty = {
 		title : {
-            text: indicator.name
+            text: issue.name
         },
         mapNavigation: {
             enabled: true,
@@ -739,7 +697,7 @@ function newMap(data){
 			stops: [
 				//~ [-1, '#FF0000'], // For NAs
 				[0, '#FFFFFF'],
-				[1, indicator.color]
+				[1, issue.color]
 			]
 		},
 		chart: {
@@ -757,7 +715,7 @@ function newMap(data){
             data : data,
             mapData: Highcharts.maps['custom/world'],
             joinBy: ['hc-key', 'key'],
-            name: indicator,
+            name: issue,
         }]
     };
     return empty;
@@ -765,21 +723,26 @@ function newMap(data){
 
 function drawRose(key, country) {
 
-	url = "iso_codes[]="+country+"&";
-	var div = d3.select("#country" + key);
+	//url = "iso_codes[]="+country+"&";
+	//var div = d3.select("#country" + key);
 	
 	var chart = roseCharts[key];
 	
-	d3.json("/radar_chart.json?years[]=2012&"+url, function(error, json) {
-		var country2 = json[0][0],
-			country = json[0][0].data;
+	//d3.json("/radar_chart.json?years[]=2012&"+url, function(error, json) {
+	d3.json("/indicator_scores.json", function(error, json) {
+
+		/*var country2 = json[0][0],
+			country = json[0][0].data;*/
+		var ind_score_array = json[key].ind_scores;
 		
 		// Create data object
-		var processed_json = new Array();
-		var length = indLength(country.indicators);
+		/*var processed_json = new Array();
+		var length = indLength(country.issues);*/
 		var dat = [];
-		$.map(country.indicators, function(obj, i) {
-			var value = parseFloat(obj.value);
+		//$.map(country.issues, function(obj, i) {
+		$.map(ind_score_array, function (name, iso) {}
+			//var value = parseFloat(obj.value);
+			var value = parseFloat(iso)
 			var y = value;
 			
 			if (value < 0 || obj.value == "NA")
@@ -793,17 +756,17 @@ function drawRose(key, country) {
 			
 			// Note that we set index manually, to force
 			// the desired order. We can ignore the highcharts error.
-			if (obj.name == "EH_AirQuality"){
+			if (name == "Child Mortality"){
 				col = "#F5C717";
 				idx = 1;
-				ind = "Air Quality";
+				ind = "Child Mortality";
 			}
-			else if (obj.name == "EH_HealthImpacts"){
+			else if (name == "Household Air Quality"){
 				col = "#F8951D";
 				idx = 0;
-				ind = "Health Impacts";
+				ind = "Household Air Quality";
 			}
-			else if (obj.name == "EH_WaterSanitation"){
+		/*	else if (obj.name == "EH_WaterSanitation"){
 				col = "#F36E2B";
 				idx = 2;
 				ind = "Water & Sanitation";
@@ -837,9 +800,9 @@ function drawRose(key, country) {
 				col = "#7D8FC8";
 				idx = 3;
 				ind = "Water & Resources";
-			}
+			}*/
 			//options.series[0].data.push({name: obj.name, y: y, color: col, realY: value});
-			dat.push({name: obj.name, y: y, color: col, realY: value, indic: ind});
+			dat.push({name: name, y: y, color: col, realY: value, indic: ind});
 		});
 		
 		var options = emptyRose(key);
@@ -853,7 +816,7 @@ function drawRose(key, country) {
 			roseCharts[key] = chart;
 		}
 
-		chart.setTitle({text: country.name});
+		chart.setTitle({text: country});
 		chart.series[0].setData(dat, false);
 		chart.redraw();
 	});
@@ -864,7 +827,7 @@ function emptyRose(key){
 			chart: {
 				polar: true,
 				type: 'column',
-				renderTo: 'country' + key
+				renderTo: 'table' + key
 			},
 			series: [{
 				type: 'column',
@@ -1410,10 +1373,10 @@ function mouseout() {
         .style("opacity", 1);
 }
 
-function indLength(indicators){
+function indLength(issues){
 	var count = 0;
-	for (var x = 0; x < indicators.length; x++){
-		if (indicators[x].value != "NA" && indicators[x].value >= 0)
+	for (var x = 0; x < issues.length; x++){
+		if (issues[x].value != "NA" && issues[x].value >= 0)
 			count++;
 	}
 	return count;
