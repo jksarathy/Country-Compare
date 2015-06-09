@@ -979,11 +979,11 @@ function initLine(){
 }
 
 function drawLine(key, country){
-	var subindicatorid = (subindicator.id == "CO2GDPd2") ? "CO2GDPd1" : subindicator.id;
+	var indicatorid = (indicator.id == "CO2GDPd2") ? "CO2GDPd1" : indicator.id;
 	var x = 0;
     // JSON for line graph
     //"/line_graph.json?indicator=" + indicator.id + "&iso_codes[]=" + country
-    d3.json("http://epi.yale.edu/api/raw_data.json?country=" + country + "&indicator=" + subindicatorid, function(error, json) {
+    d3.json("http://epi.yale.edu/api/raw_data.json?country=" + country + "&indicator=" + indicatorid, function(error, json) {
 		//var dat = [];
 		
 		if (json === undefined){
@@ -1050,7 +1050,7 @@ function drawLine(key, country){
 		//lineChart.yAxis[0].setTitle(subindicator.name);
 		lineChart.yAxis[0].update({
                 title:{
-                    text: subindicator.name.toUpperCase()
+                    text: indicator.name.toUpperCase()
                 }
             });
 		lineChart.series[key].setData(dat, true);
