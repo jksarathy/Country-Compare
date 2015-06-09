@@ -740,7 +740,7 @@ function drawRose(key, country) {
 		var length = indLength(country.issues);*/
 		var dat = [];
 		//$.map(country.issues, function(obj, i) {
-		$.map(ind_score_array, function (name, iso) {}
+		$.map(ind_score_array, function (name, iso) {
 			//var value = parseFloat(obj.value);
 			var value = parseFloat(iso)
 			var y = value;
