@@ -761,67 +761,67 @@ function drawRose(key, country) {
 				ind = "Household Air Quality";
 			}
 			else if (name == "Air Pollution - Average Exposure to PM2.5"){
-				col = "#F36E2B";
+				col = "#F8951D";
 				idx = 2;
 				ind = "Air Pollution";
 			}
 			else if (name == "Air Pollution - PM2.5 Exceedance"){
-				col = "#3175B9";
+				col = "#F8951D";
 				idx = 3;
 				ind = "Air Pollution";
 			}
 			else if (name == "Access to Drinking Water"){
-				col = "#008C8C";
+				col = "#F36E2B";
 				idx = 4;
 				ind = "Access to Drinking Water";
 			}
 			else if (name == "Access to Sanitation"){
-				col = "#2DB45D";
+				col = "#F36E2B";
 				idx = 5;
 				ind = "Access to Sanitation";
 			}
 			else if (name == "Wastewater Treatment"){
-				col = "#3CBCA3";
+				col = "#3175B9";
 				idx = 6;
 				ind = "Wastewater Treatment";
 			}
 			else if (name == "Agricultural Subsidies"){
-				col = "#0B9BCC";
+				col = "#008C8C";
 				idx = 7;
 				ind = "Agricultural Subsidies";
 			}
 			else if (name == "Change in Forest Cover"){
-				col = "#7D8FC8";
+				col = "#2DB45D";
 				idx = 8;
 				ind = "Change in Forest Cover";
 			}
 			else if (name == "Coastal Shelf Fishing Pressure"){
-				col = "#7D8FC8";
+				col = "#3CBCA3";
 				idx = 9;
 				ind = "Coastal Shelf Fishing Pressure";
 			}
 			else if (name == "Fish Stocks"){
-				col = "#7D8FC8";
+				col = "#3CBCA3";
 				idx = 10;
 				ind = "Fish Stocks";
 			}
 			else if (name == "Terrestrial Protected Areas (National Biome Weights)"){
-				col = "#7D8FC8";
+				col = "#0B9BCC";
 				idx = 11;
 				ind = "Terrestrial Protected Areas";
 			}
 			else if (name == "Terrestrial Protected Areas (Global Biome Weights)"){
-				col = "#7D8FC8";
+				col = "#0B9BCC";
 				idx = 12;
 				ind = "Terrestrial Protected Areas";
 			}
 			else if (name == "Marine Protected Areas"){
-				col = "#7D8FC8";
+				col = "#0B9BCC";
 				idx = 13;
 				ind = "Marine Protected Areas";
 			}
 			else if (name == "Critical Habitat Protection"){
-				col = "#7D8FC8";
+				col = "#0B9BCC";
 				idx = 13;
 				ind = "Critical Habitat Protection";
 			}
