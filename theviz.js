@@ -90,7 +90,7 @@ d3.json("/issue_list.json", function(error, json) {
 
 	$("#submit_button").click(function() {
 		//var selected_id = $('#ind')[0].id;
-		var selected_id = subindicator.id;
+		var selected_id = indicator.id;
 		//window.alert(selected_id);
 		var group_num = $(selected_id).parent().attr("value"); //not working yet
 		//window.alert(group_num);
@@ -733,10 +733,12 @@ function drawRose(key, country) {
 
 		/*var country2 = json[0][0],
 			country = json[0][0].data;*/
-		window.alert(json[0]);
-		window.alert(json[0][0]);
-	
-		var ind_score_array = json[0][key].ind_scores;
+		//window.alert(json[0]);
+		//window.alert(json[0][0]);
+		var scores = json.scores;
+		var country_scores = scores[key];
+		window.alert(country_scores.country);
+		var ind_score_array = country_scores.ind_scores;
 		
 		// Create data object
 		/*var processed_json = new Array();
