@@ -733,6 +733,9 @@ function drawRose(key, country) {
 
 		/*var country2 = json[0][0],
 			country = json[0][0].data;*/
+		window.alert(json[0]);
+		window.alert(json[0][0]);
+	
 		var ind_score_array = json[0][key].ind_scores;
 		
 		// Create data object
