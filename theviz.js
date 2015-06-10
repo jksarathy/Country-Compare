@@ -871,6 +871,9 @@ function emptyRose(key){
 				polar: true,
 				type: 'column',
 				renderTo: 'table' + key,
+				plotBackgroundColor: null,
+				plotBackgroundImage: null,
+				plotBorderWidth: 0,
 				backgroundColor: null,
 				margin: [0,0,0,0],
 				width: 300
