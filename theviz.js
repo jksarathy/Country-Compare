@@ -32,6 +32,7 @@ runCharts();
 
 // JSON for select Boxes 
 d3.json("/country_list.json", function(error, json) { // http://localhost/country_list.json
+	console.log(json);
     var selecthtml = "";
     var active = 0;
     $.each(json, function(name, iso) {
@@ -729,14 +730,14 @@ function drawRose(key, country) {
 	//var chart = roseCharts[key];
 	
 	//d3.json("/radar_chart.json?years[]=2012&"+url, function(error, json) {
-	d3.json("/indicator_scores.json", function(error, json) {
+	d3.json("/indicator_scores.json", function(error, x) {
 
 		/*var country2 = json[0][0],
 			country = json[0][0].data;*/
 		//window.alert(json[0]);
 		//window.alert(json[0][0]);
-		console.log(json);
-		var scores = json.scores;
+		console.log(x);
+		var scores = x.scores;
 		var country_scores = scores[key];
 		window.alert(country_scores.country);
 		var ind_score_array = country_scores.ind_scores;
