@@ -748,7 +748,7 @@ function drawRose(key, country) {
 			var value = parseFloat(iso)
 			var y = value;
 			
-			if (value < 0 || obj.value == "NA")
+			if (value < 0 || value == "NA")
 				return;
 			else if (value < 10)
 				y = 10;
