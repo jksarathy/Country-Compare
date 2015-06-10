@@ -726,7 +726,7 @@ function drawRose(key, country) {
 	//url = "iso_codes[]="+country+"&";
 	//var div = d3.select("#country" + key);
 	
-	var chart = roseCharts[key];
+	//var chart = roseCharts[key];
 	
 	//d3.json("/radar_chart.json?years[]=2012&"+url, function(error, json) {
 	d3.json("/indicator_scores.json", function(error, json) {
@@ -735,6 +735,7 @@ function drawRose(key, country) {
 			country = json[0][0].data;*/
 		//window.alert(json[0]);
 		//window.alert(json[0][0]);
+		console.log(json);
 		var scores = json.scores;
 		var country_scores = scores[key];
 		window.alert(country_scores.country);
