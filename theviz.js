@@ -238,10 +238,10 @@ function drawGauge(key, country) {
         	},
 
         	series: [{
-        		name: subindicator.name,
+        		name: indicator.name,
         		data: dat,
         		tooltip: {
-        			valueSuffix: subindicator.shortunits
+        			valueSuffix: indicator.shortunits
         		}
         	}]
     	});
@@ -729,22 +729,12 @@ function drawRose(key, country) {
 	var chart = roseCharts[key];
 	
 	//d3.json("/radar_chart.json?years[]=2012&"+url, function(error, json) {
-	d3.json("/indicator_scores.json", function(error, x) {
+	d3.json("/indicator_scores.json", function(error, json) {
 
-
-		console.log(x);
-		var scores = x.scores;
-		var country_scores = scores[key];
-		console.log(country_scores);
-		var ind_scores_obj = country_scores.ind_scores;
-		
-		// Create data object
-		/*var processed_json = new Array();
-		var length = indLength(country.issues);*/
+		var ind_scores = json.country;
 		var dat = [];
-		//$.map(country.issues, function(obj, i) {
-		$.each(ind_scores_obj, function (name, iso) {
-			//var value = parseFloat(obj.value);
+
+		$.each(ind_scores, function (name, iso) {
 			var value = parseFloat(iso)
 			var y = value;
 			
@@ -761,49 +751,99 @@ function drawRose(key, country) {
 			// the desired order. We can ignore the highcharts error.
 			if (name == "Child Mortality"){
 				col = "#F5C717";
-				idx = 1;
+				idx = 0;
 				ind = "Child Mortality";
 			}
 			else if (name == "Household Air Quality"){
 				col = "#F8951D";
-				idx = 0;
+				idx = 1;
 				ind = "Household Air Quality";
 			}
-		/*	else if (obj.name == "EH_WaterSanitation"){
+			else if (obj.name == "Air Pollution - Average Exposure to PM2.5"){
 				col = "#F36E2B";
 				idx = 2;
-				ind = "Water & Sanitation";
+				ind = "Air Pollution";
 			}
-			else if (obj.name == "EV_Agriculture"){
+			else if (obj.name == "Air Pollution - PM2.5 Exceedance"){
 				col = "#3175B9";
-				idx = 4;
-				ind = "Agriculture";
+				idx = 3;
+				ind = "Air Pollution";
 			}
-			else if (obj.name == "EV_BiodiversityHabitat"){
+			else if (obj.name == "Access to Drinking Water"){
 				col = "#008C8C";
-				idx = 7;
-				ind = "Biodiversity & Habitat";
+				idx = 4;
+				ind = "Access to Drinking Water";
 			}
-			else if (obj.name == "EV_ClimateEnergy"){
+			else if (obj.name == "Access to Sanitation"){
 				col = "#2DB45D";
-				idx = 8;
-				ind = "Climate & Energy";
+				idx = 5;
+				ind = "Access to Sanitation";
 			}
-			else if (obj.name == "EV_Fisheries"){
+			else if (obj.name == "Wastewater Treatment"){
 				col = "#3CBCA3";
 				idx = 6;
-				ind = "Fisheries";
+				ind = "Wastewater Treatment";
 			}
-			else if (obj.name == "EV_Forests"){
+			else if (obj.name == "Agricultural Subsidies"){
 				col = "#0B9BCC";
-				idx = 5;
-				ind = "Forests";
+				idx = 7;
+				ind = "Agricultural Subsidies";
 			}
-			else if (obj.name == "EV_WaterResources"){
+			else if (obj.name == "Change in Forest Cover"){
 				col = "#7D8FC8";
-				idx = 3;
-				ind = "Water & Resources";
-			}*/
+				idx = 8;
+				ind = "Change in Forest Cover";
+			}
+			else if (obj.name == "Coastal Shelf Fishing Pressure"){
+				col = "#7D8FC8";
+				idx = 9;
+				ind = "Coastal Shelf Fishing Pressure";
+			}
+			else if (obj.name == "Fish Stocks"){
+				col = "#7D8FC8";
+				idx = 10;
+				ind = "Fish Stocks";
+			}
+			else if (obj.name == "Terrestrial Protected Areas (National Biome Weights)"){
+				col = "#7D8FC8";
+				idx = 11;
+				ind = "Terrestrial Protected Areas";
+			}
+			else if (obj.name == "Terrestrial Protected Areas (Global Biome Weights)"){
+				col = "#7D8FC8";
+				idx = 12;
+				ind = "Terrestrial Protected Areas";
+			}
+			else if (obj.name == "Marine Protected Areas"){
+				col = "#7D8FC8";
+				idx = 13;
+				ind = "Marine Protected Areas";
+			}
+			else if (obj.name == "Critical Habitat Protection"){
+				col = "#7D8FC8";
+				idx = 13;
+				ind = "Critical Habitat Protection";
+			}
+			else if (obj.name == "Trend in Carbon Intensity"){
+				col = "#7D8FC8";
+				idx = 14;
+				ind = "Trend in Carbon Intensity";
+			}
+			else if (obj.name == "Change of Trend in Carbon Intensity"){
+				col = "#7D8FC8";
+				idx = 15;
+				ind = "Change of Trend in Carbon Intensity";
+			}
+			else if (obj.name == "Access to Electricity"){
+				col = "#7D8FC8";
+				idx = 16;
+				ind = "Access to Electricity";
+			}
+			else if (obj.name == "Trend in CO2 Emissions per kWh"){
+				col = "#7D8FC8";
+				idx = 17;
+				ind = "Tred in CO2 Emissions";
+			}
 			//options.series[0].data.push({name: obj.name, y: y, color: col, realY: value});
 			dat.push({name: name, y: y, color: col, realY: value, indic: ind});
 		});
@@ -819,7 +859,7 @@ function drawRose(key, country) {
 			roseCharts[key] = chart;
 		}
 
-		chart.setTitle({text: country});
+		//chart.setTitle({text: country});
 		chart.series[0].setData(dat, false);
 		chart.redraw();
 	});
@@ -830,7 +870,10 @@ function emptyRose(key){
 			chart: {
 				polar: true,
 				type: 'column',
-				renderTo: 'table' + key
+				renderTo: 'table' + key,
+				backgroundColor: null,
+				margin: [0,0,0,0],
+				width: 300
 			},
 			series: [{
 				type: 'column',
