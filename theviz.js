@@ -32,7 +32,6 @@ runCharts();
 
 // JSON for select Boxes 
 d3.json("/country_list.json", function(error, json) { // http://localhost/country_list.json
-	console.log(json);
     var selecthtml = "";
     var active = 0;
     $.each(json, function(name, iso) {
