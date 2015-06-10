@@ -760,87 +760,87 @@ function drawRose(key, country) {
 				idx = 1;
 				ind = "Household Air Quality";
 			}
-			else if (obj.name == "Air Pollution - Average Exposure to PM2.5"){
+			else if (name == "Air Pollution - Average Exposure to PM2.5"){
 				col = "#F36E2B";
 				idx = 2;
 				ind = "Air Pollution";
 			}
-			else if (obj.name == "Air Pollution - PM2.5 Exceedance"){
+			else if (name == "Air Pollution - PM2.5 Exceedance"){
 				col = "#3175B9";
 				idx = 3;
 				ind = "Air Pollution";
 			}
-			else if (obj.name == "Access to Drinking Water"){
+			else if (name == "Access to Drinking Water"){
 				col = "#008C8C";
 				idx = 4;
 				ind = "Access to Drinking Water";
 			}
-			else if (obj.name == "Access to Sanitation"){
+			else if (name == "Access to Sanitation"){
 				col = "#2DB45D";
 				idx = 5;
 				ind = "Access to Sanitation";
 			}
-			else if (obj.name == "Wastewater Treatment"){
+			else if (name == "Wastewater Treatment"){
 				col = "#3CBCA3";
 				idx = 6;
 				ind = "Wastewater Treatment";
 			}
-			else if (obj.name == "Agricultural Subsidies"){
+			else if (name == "Agricultural Subsidies"){
 				col = "#0B9BCC";
 				idx = 7;
 				ind = "Agricultural Subsidies";
 			}
-			else if (obj.name == "Change in Forest Cover"){
+			else if (name == "Change in Forest Cover"){
 				col = "#7D8FC8";
 				idx = 8;
 				ind = "Change in Forest Cover";
 			}
-			else if (obj.name == "Coastal Shelf Fishing Pressure"){
+			else if (name == "Coastal Shelf Fishing Pressure"){
 				col = "#7D8FC8";
 				idx = 9;
 				ind = "Coastal Shelf Fishing Pressure";
 			}
-			else if (obj.name == "Fish Stocks"){
+			else if (name == "Fish Stocks"){
 				col = "#7D8FC8";
 				idx = 10;
 				ind = "Fish Stocks";
 			}
-			else if (obj.name == "Terrestrial Protected Areas (National Biome Weights)"){
+			else if (name == "Terrestrial Protected Areas (National Biome Weights)"){
 				col = "#7D8FC8";
 				idx = 11;
 				ind = "Terrestrial Protected Areas";
 			}
-			else if (obj.name == "Terrestrial Protected Areas (Global Biome Weights)"){
+			else if (name == "Terrestrial Protected Areas (Global Biome Weights)"){
 				col = "#7D8FC8";
 				idx = 12;
 				ind = "Terrestrial Protected Areas";
 			}
-			else if (obj.name == "Marine Protected Areas"){
+			else if (name == "Marine Protected Areas"){
 				col = "#7D8FC8";
 				idx = 13;
 				ind = "Marine Protected Areas";
 			}
-			else if (obj.name == "Critical Habitat Protection"){
+			else if (name == "Critical Habitat Protection"){
 				col = "#7D8FC8";
 				idx = 13;
 				ind = "Critical Habitat Protection";
 			}
-			else if (obj.name == "Trend in Carbon Intensity"){
+			else if (name == "Trend in Carbon Intensity"){
 				col = "#7D8FC8";
 				idx = 14;
 				ind = "Trend in Carbon Intensity";
 			}
-			else if (obj.name == "Change of Trend in Carbon Intensity"){
+			else if (name == "Change of Trend in Carbon Intensity"){
 				col = "#7D8FC8";
 				idx = 15;
 				ind = "Change of Trend in Carbon Intensity";
 			}
-			else if (obj.name == "Access to Electricity"){
+			else if (name == "Access to Electricity"){
 				col = "#7D8FC8";
 				idx = 16;
 				ind = "Access to Electricity";
 			}
-			else if (obj.name == "Trend in CO2 Emissions per kWh"){
+			else if (name == "Trend in CO2 Emissions per kWh"){
 				col = "#7D8FC8";
 				idx = 17;
 				ind = "Tred in CO2 Emissions";
