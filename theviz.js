@@ -874,8 +874,10 @@ function emptyRose(key){
 				renderTo: 'table' + key,
 				plotBackgroundColor: null,
 				plotBackgroundImage: null,
+				backgroundColor: null,
 				plotBorderWidth: 0,
-				margin: [0,0,0,0]
+				margin: [0,0,0,0],
+				spacing: [0, 0, 0, 0]
 			},
 			series: [{
 				type: 'column',
