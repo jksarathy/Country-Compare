@@ -731,7 +731,8 @@ function drawRose(key, country) {
 	//d3.json("/radar_chart.json?years[]=2012&"+url, function(error, json) {
 	d3.json("/indicator_scores.json", function(error, json) {
 
-		var ind_scores = json.country;
+		console.log(json);
+		var ind_scores = json[country];
 		var dat = [];
 
 		$.each(ind_scores, function (name, iso) {
