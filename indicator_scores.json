@@ -1,5 +1,5 @@
 {
-    "United States of America":
+    "USA":
     {
         "Child Mortality": "95.33",
         "Household Air Quality": "95",
@@ -23,7 +23,7 @@
         "Trend in CO2 Emissions per kWh": "60.18"
     },
 
-    "China":
+    "CHN":
     {
         "Child Mortality": "85.33",
         "Household Air Quality": "95",
@@ -47,7 +47,7 @@
         "Trend in CO2 Emissions per kWh": "60.18"
     },
     
-    "India":
+    "IND":
     {
         "Child Mortality": "75.33",
         "Household Air Quality": "95",
@@ -69,4 +69,5 @@
         "Change of Trend in Carbon Intensity": "29.84",
         "Access to Electricity": "100",
         "Trend in CO2 Emissions per kWh": "60.18"
-    },
+    }
+}
