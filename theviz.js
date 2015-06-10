@@ -731,14 +731,11 @@ function drawRose(key, country) {
 	//d3.json("/radar_chart.json?years[]=2012&"+url, function(error, json) {
 	d3.json("/indicator_scores.json", function(error, x) {
 
-		/*var country2 = json[0][0],
-			country = json[0][0].data;*/
-		//window.alert(json[0]);
-		//window.alert(json[0][0]);
+
 		console.log(x);
 		var scores = x.scores;
 		var country_scores = scores[key];
-		console.log(country_scores.country);
+		console.log(country_scores);
 		var ind_scores_obj = country_scores.ind_scores;
 		
 		// Create data object
