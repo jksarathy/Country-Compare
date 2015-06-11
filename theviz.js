@@ -49,10 +49,12 @@ d3.json("/country_list.json", function(error, json) {
     $("#submit_button").click(function() {
     	var countryselection_id = $('#edit-select-countries').select2("val");
     	var countryselection_name = $('#edit-select-countries').select2("data");
+    	console.log(countryselection_name);
     	var new_countryselection = [];
     	$.each(countryselection_id, function(index, element) {
     		new_countryselection[index] = {"name": countryselection_name[index], "id": countryselection_id[index]};
     	})
+    	console.log(new_countryselection);
     	countryselection = (new_countryselection == null) ? countryselection : new_countryselection;
     	runCharts();
 	});
@@ -742,15 +744,18 @@ function drawRose(key, country) {
 
 		var scores = json[country];
 		var epi_score = scores["EPI Score"];
+		console.log(epi_score);
 		var epi_rank = scores["Rank"];
+		console.log(epi_rank);
 		var selected_ind_score = scores[indicator.name];
+		console.log(selected_ind_score);
 		//var selected_iss_score = scores[issue.name]; need to fix format of key
 
 		$("#ind" + key).html(selected_ind_score);
 		$("#epi_score" + key).html(epi_score);
 		$("#epi_rank" + key).html(epi_rank);
 
-		$.each(ind_scores, function (name, iso) {
+		$.each(scores, function (name, iso) {
 			var value = parseFloat(iso)
 			var y = value;
 			
