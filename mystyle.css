@@ -23,13 +23,15 @@ h6 {
   font-weight: bold;
 }
 
-h9, h4, h5 {
+h9 {
   text-transform: uppercase;
   color: #909090;
+  font-size: 11px;
 }
 
-h9 {
-  font-size: 11px;
+h4, h5 {
+  text-transform: uppercase;
+  color: #404040;
 }
 
 
