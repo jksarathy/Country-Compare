@@ -59,11 +59,11 @@ th, td {
 }
 
 .container {
-  width: 900;
+  width: 80%;
   height: 100%;
   margin: 0 auto;
   padding: 0;
-  position: fixed;
+  min-width: 900px;
 }
 
 .forms {
