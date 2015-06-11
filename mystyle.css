@@ -66,6 +66,16 @@ th, td {
   padding: 0;
 }
 
+#lineChart {
+  width: 900px;
+  height: 600px;
+  max-width: 900px;
+  min-width: 900px;
+  max-height: 600px;
+  min-height: 600px;
+  padding: 0;
+}
+
 .container {
   width: 80%;
   height: 100%;
@@ -94,11 +104,10 @@ table {
   margin-bottom: 25px;
 }
 
-.map, .lineChart, .maincontainer {
+.map, #lineChart, .maincontainer {
   background: #FFFFFF;
   box-shadow: 2px 2px 2px #939396;
   margin-bottom: 25px;
-  margin-top: 25px;
 }
 
 input {
