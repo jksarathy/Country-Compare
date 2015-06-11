@@ -38,7 +38,8 @@ th {
   background-color: #C0C0C0;
   color: white;
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 11px;
+  height: 80px;
 }
 
 /*td {
@@ -49,15 +50,21 @@ th {
 th, td {
   width: 100%;
   margin: 0 auto;
-  padding: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 0;
+  padding-bottom: 0;
   /*margin: 0;*/
   /*padding: 0;*/
   border-top: 1px #C0C0C0 solid;
   text-align: center;
   min-width: 150px;
   max-width: 300px;
-  height: 200px;
   /*border: 1px solid;*/
+}
+
+td {
+  height: 150px;
 }
 
 .rose-charts {

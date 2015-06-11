@@ -117,7 +117,7 @@ function clearTable() {
 	$("#chartTable").html(header_html);
 }
 function addTable(i, country) {
-	var table_html = "<tr><td><div class='rose-charts' id='table" + i + "'</div></td><td>" + country + "</td><td id ='epi_score" + i + "'>EPI Score</td><td id ='epi_rank" + i + "'>EPI Rank</td><td id ='ind" + i + "'>Indicator Score</td><td>Policy Issue Score</td></tr>";
+	var table_html = "<tr><td><div class='rose-charts' id='table" + i + "'</div></td><td style='font-size:150% font-weight:bold'>" + country + "</td><td style='font-size:150% font-weight:bold' id ='epi_score" + i + "'>EPI Score</td><td id ='epi_rank" + i + "'>EPI Rank</td><td id ='ind" + i + "'>Indicator Score</td><td>Policy Issue Score</td></tr>";
 	$("#chartTable").append(table_html);
 }
 
@@ -897,10 +897,10 @@ function emptyRose(key){
 				polar: true,
 				type: 'column',
 				renderTo: 'table' + key,
-				plotBackgroundColor: null,
+				plotBackgroundColor: #C0C0C0,
 				plotBackgroundImage: null,
 				backgroundColor: null,
-				plotBorderWidth: 1
+				plotBorderWidth: 0
 			},
 			series: [{
 				type: 'column',
