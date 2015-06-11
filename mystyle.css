@@ -38,12 +38,12 @@ th {
   background-color: #C0C0C0;
   color: white;
   text-transform: uppercase;
-  font-size: 12 px;
+  font-size: 11 px;
 }
 
-td {
+/*td {
   height: 150px;
-}
+}*/
 
 
 th, td {
@@ -59,7 +59,7 @@ th, td {
 }
 
 .container {
-  width: 70%;
+  width: 900;
   height: 100%;
   margin: 0 auto;
   padding: 0;
