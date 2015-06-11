@@ -38,7 +38,7 @@ th {
   background-color: #C0C0C0;
   color: white;
   text-transform: uppercase;
-  font-size: 10 px;
+  font-size: 10px;
 }
 
 /*td {
@@ -54,6 +54,9 @@ th, td {
   /*padding: 0;*/
   border-top: 1px #C0C0C0 solid;
   text-align: center;
+  min-width: 150px;
+  max-width: 300px;
+  height: 200px;
   /*border: 1px solid;*/
 }
 

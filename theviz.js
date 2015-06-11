@@ -129,7 +129,7 @@ function runCharts() {
 	//drawSpark(sparkCountry);
 	initLine();
 	$.each(countryselection, function(i, d) {
-    	drawLine(i,d.id);
+    	drawLine(i, d.id);
     	addTable(i, d.name);
     	//drawGauge(i, d);
     	drawRose(i, d.name);
@@ -749,6 +749,8 @@ function drawRose(key, country) {
 		console.log(epi_rank);
 		var selected_ind_score = scores[indicator.name];
 		console.log(selected_ind_score);
+
+		var dat = [];
 		//var selected_iss_score = scores[issue.name]; need to fix format of key
 
 		$("#ind" + key).html(selected_ind_score);
@@ -1058,6 +1060,7 @@ function initLine(){
 }
 
 function drawLine(key, country){
+	console.log(country);
 	var indicatorid = (indicator.id == "CO2GDPd2") ? "CO2GDPd1" : indicator.id;
 	var x = 0;
     // JSON for line graph
