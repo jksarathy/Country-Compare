@@ -108,11 +108,11 @@ pie = d3.layout.pie()
 });
 
 function clearTable() {
-	var header_html = "<tr><th>Rose Chart</th><th>Country</th><th>2014 " + indicator.name + " Score</th><th>2014 " + issue.name + " Score</th></tr>";
+	var header_html = "<tr><th>Rose Chart</th><th>Country</th><th>2014 EPI Score</th><th>2014 EPI Ranking</th><th>2014 " + indicator.name + " Score</th><th>2014 " + issue.name + " Score</th></tr>";
 	$("#chartTable").html(header_html);
 }
 function addTable(i, country) {
-	var table_html = "<tr><td><div class='rose-charts' id='table" + i + "'</div></td><td>" + country + "</td><td id ='ind" + i + "'>Indicator Score</td><td>Policy Issue Score</td></tr>";
+	var table_html = "<tr><td><div class='rose-charts' id='table" + i + "'</div></td><td>" + country + "</td><td>100</td><td>1</td><td id ='ind" + i + "'>Indicator Score</td><td>Policy Issue Score</td></tr>";
 	$("#chartTable").append(table_html);
 }
 
