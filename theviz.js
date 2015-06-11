@@ -14,7 +14,6 @@ var sdat = new Array();
 var main = d3.select('#maincontainer');
 var countryselection = ["CHN","IND","USA"] ; 
 var url = "";
-var indicatorselection = ["0", "0", "0"];
 
 var issue = {id: "EH_HealthImpacts", name: "Health Impacts", color: "#ff9600"};
 var indicator = {name: "Child Mortality", id: "CHMORT", units: "Probability", shortunits: ""};
@@ -77,6 +76,7 @@ d3.json("/issue_list.json", function(error, json) {
 	$("#submit_button").click(function() {
 		//var selected_id = $('#ind')[0].id;
 		var selected_id = indicator.id;
+		console.log(selected_id);
 		//window.alert(selected_id);
 		var group_num = $(selected_id).parent().attr("value"); //not working yet
 		console.log(group_num);
