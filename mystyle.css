@@ -54,6 +54,7 @@ th, td {
   padding: 0;
   border-top: 1px #C0C0C0 solid;
   text-align: center;
+  border: 1px solid;
 }
 
 .rose-charts {
@@ -105,8 +106,8 @@ input {
   color: white;
   width: 130px;
   position: relative;
-  top: 80px;
-  left: 10px;
+  top: 60px;
+  left: 20px;
 }
 
 #clist, #categories, input {display: inline-block; font-size: 12px; vertical-align: top;}
@@ -121,15 +122,16 @@ input {
 
 #categories {
   width: 400px;
+  padding: 0;
   /*padding: 10px;*/
 }
 
-#select-ind {
+/*#select-ind {
   width: 300px;
   font-size: 11px;
   webkit-appearance: none;
   background: url(/select2.png) no-repeat right;
-}
+}*/
 
 
 
