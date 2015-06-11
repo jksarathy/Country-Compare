@@ -23,9 +23,13 @@ h6 {
   font-weight: bold;
 }
 
-h9, h4 {
+h9, h4, h5 {
   text-transform: uppercase;
-  color: #C0C0C0;
+  color: #909090;
+}
+
+h9 {
+  font-size: 11px;
 }
 
 
@@ -60,8 +64,8 @@ th, td {
   /*padding: 0;*/
   border-top: 1px #C0C0C0 solid;
   text-align: center;
-  max-width: 200px;
-  min-width: 100px;
+  max-width: 175px;
+  min-width: 175px;
   /*border: 1px solid;*/
 }
 
