@@ -112,7 +112,7 @@ function clearTable() {
 	$("#chartTable").html(header_html);
 }
 function addTable(i, country) {
-	var table_html = "<tr><td class='rose-charts' id='table" + i + "'></td><td>" + country + "</td><td id ='ind" + i + "'>Indicator Score</td><td>Policy Issue Score</td></tr>";
+	var table_html = "<tr><td><div class='rose-charts' id='table" + i + "'</div></td><td>" + country + "</td><td id ='ind" + i + "'>Indicator Score</td><td>Policy Issue Score</td></tr>";
 	$("#chartTable").append(table_html);
 }
 
