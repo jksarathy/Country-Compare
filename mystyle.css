@@ -101,14 +101,12 @@ input {
   background-color: #5C5C5C;
   color: white;
   width: 130px;
-  position: absolute;
-  bottom: 20px;
+  position: relative;
+  top: 30px;
 }
 
 #clist, #categories, input {display: inline-block; font-size: 12px; vertical-align: top;}
 #clist {
-  position: absolute;
-  top: 15px;
   width: 250px;
   padding-left: 10px;
 }
@@ -118,8 +116,6 @@ input {
 }
 
 #categories {
-  position: absolute;
-  top: 15px;
   width: 400px;
   padding: 10px;
 }
