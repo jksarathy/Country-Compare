@@ -71,7 +71,7 @@
         "Trend in CO2 Emissions per kWh": "60.18"
     },
 
-    "CHN":
+    "AFG":
     {
         "Child Mortality": "85.33",
         "Household Air Quality": "95",
@@ -95,7 +95,7 @@
         "Trend in CO2 Emissions per kWh": "60.18"
     },
 
-    "CHN":
+    "ALB":
     {
         "Child Mortality": "85.33",
         "Household Air Quality": "95",
@@ -119,7 +119,7 @@
         "Trend in CO2 Emissions per kWh": "60.18"
     },
 
-    "CHN":
+    "DZA":
     {
         "Child Mortality": "85.33",
         "Household Air Quality": "95",
@@ -143,7 +143,7 @@
         "Trend in CO2 Emissions per kWh": "60.18"
     },
 
-    "CHN":
+    "AGO":
     {
         "Child Mortality": "85.33",
         "Household Air Quality": "95",
@@ -167,7 +167,7 @@
         "Trend in CO2 Emissions per kWh": "60.18"
     },
 
-    "CHN":
+    "ATG":
     {
         "Child Mortality": "85.33",
         "Household Air Quality": "95",
@@ -191,7 +191,7 @@
         "Trend in CO2 Emissions per kWh": "60.18"
     },
 
-    "CHN":
+    "ARG":
     {
         "Child Mortality": "85.33",
         "Household Air Quality": "95",
@@ -215,7 +215,7 @@
         "Trend in CO2 Emissions per kWh": "60.18"
     },
 
-    "CHN":
+    "ARM":
     {
         "Child Mortality": "85.33",
         "Household Air Quality": "95",
@@ -238,4 +238,316 @@
         "Access to Electricity": "100",
         "Trend in CO2 Emissions per kWh": "60.18"
     },
+
+    "AUS":
+    {
+        "Child Mortality": "85.33",
+        "Household Air Quality": "95",
+        "Air Pollution - Average Exposure to PM2.5": "100",
+        "Air Pollution - PM2.5 Exceedance": "94.24",
+        "Access to Drinking Water": "80.68",
+        "Access to Sanitation": "92.27",
+        "Wastewater Treatment": "63.66",
+        "Agricultural Subsidies": "43.05",
+        "Pesticide Regulation": "80",
+        "Change in Forest Cover": "14.35",
+        "Coastal Shelf Fishing Pressure": "5.28",
+        "Fish Stocks": "1.39",
+        "Terrestrial Protected Areas (National Biome Weights)": "44",
+        "Terrestrial Protected Areas (Global Biome Weights)": "49.58",
+        "Marine Protected Areas": "59.81",
+        "Critical Habitat Protection": "100",
+        "Trend in Carbon Intensity": "54.67",
+        "Change of Trend in Carbon Intensity": "29.84",
+        "Access to Electricity": "100",
+        "Trend in CO2 Emissions per kWh": "60.18"
+    },
+
+    "AUT":
+    {
+        "Child Mortality": "85.33",
+        "Household Air Quality": "95",
+        "Air Pollution - Average Exposure to PM2.5": "100",
+        "Air Pollution - PM2.5 Exceedance": "94.24",
+        "Access to Drinking Water": "80.68",
+        "Access to Sanitation": "92.27",
+        "Wastewater Treatment": "63.66",
+        "Agricultural Subsidies": "43.05",
+        "Pesticide Regulation": "80",
+        "Change in Forest Cover": "14.35",
+        "Coastal Shelf Fishing Pressure": "5.28",
+        "Fish Stocks": "1.39",
+        "Terrestrial Protected Areas (National Biome Weights)": "44",
+        "Terrestrial Protected Areas (Global Biome Weights)": "49.58",
+        "Marine Protected Areas": "59.81",
+        "Critical Habitat Protection": "100",
+        "Trend in Carbon Intensity": "54.67",
+        "Change of Trend in Carbon Intensity": "29.84",
+        "Access to Electricity": "100",
+        "Trend in CO2 Emissions per kWh": "60.18"
+    },
+
+    "AZE":
+    {
+        "Child Mortality": "85.33",
+        "Household Air Quality": "95",
+        "Air Pollution - Average Exposure to PM2.5": "100",
+        "Air Pollution - PM2.5 Exceedance": "94.24",
+        "Access to Drinking Water": "80.68",
+        "Access to Sanitation": "92.27",
+        "Wastewater Treatment": "63.66",
+        "Agricultural Subsidies": "43.05",
+        "Pesticide Regulation": "80",
+        "Change in Forest Cover": "14.35",
+        "Coastal Shelf Fishing Pressure": "5.28",
+        "Fish Stocks": "1.39",
+        "Terrestrial Protected Areas (National Biome Weights)": "44",
+        "Terrestrial Protected Areas (Global Biome Weights)": "49.58",
+        "Marine Protected Areas": "59.81",
+        "Critical Habitat Protection": "100",
+        "Trend in Carbon Intensity": "54.67",
+        "Change of Trend in Carbon Intensity": "29.84",
+        "Access to Electricity": "100",
+        "Trend in CO2 Emissions per kWh": "60.18"
+    },
+
+    "BHS":
+    {
+        "Child Mortality": "85.33",
+        "Household Air Quality": "95",
+        "Air Pollution - Average Exposure to PM2.5": "100",
+        "Air Pollution - PM2.5 Exceedance": "94.24",
+        "Access to Drinking Water": "80.68",
+        "Access to Sanitation": "92.27",
+        "Wastewater Treatment": "63.66",
+        "Agricultural Subsidies": "43.05",
+        "Pesticide Regulation": "80",
+        "Change in Forest Cover": "14.35",
+        "Coastal Shelf Fishing Pressure": "5.28",
+        "Fish Stocks": "1.39",
+        "Terrestrial Protected Areas (National Biome Weights)": "44",
+        "Terrestrial Protected Areas (Global Biome Weights)": "49.58",
+        "Marine Protected Areas": "59.81",
+        "Critical Habitat Protection": "100",
+        "Trend in Carbon Intensity": "54.67",
+        "Change of Trend in Carbon Intensity": "29.84",
+        "Access to Electricity": "100",
+        "Trend in CO2 Emissions per kWh": "60.18"
+    },
+
+    "BHR":
+    {
+        "Child Mortality": "85.33",
+        "Household Air Quality": "95",
+        "Air Pollution - Average Exposure to PM2.5": "100",
+        "Air Pollution - PM2.5 Exceedance": "94.24",
+        "Access to Drinking Water": "80.68",
+        "Access to Sanitation": "92.27",
+        "Wastewater Treatment": "63.66",
+        "Agricultural Subsidies": "43.05",
+        "Pesticide Regulation": "80",
+        "Change in Forest Cover": "14.35",
+        "Coastal Shelf Fishing Pressure": "5.28",
+        "Fish Stocks": "1.39",
+        "Terrestrial Protected Areas (National Biome Weights)": "44",
+        "Terrestrial Protected Areas (Global Biome Weights)": "49.58",
+        "Marine Protected Areas": "59.81",
+        "Critical Habitat Protection": "100",
+        "Trend in Carbon Intensity": "54.67",
+        "Change of Trend in Carbon Intensity": "29.84",
+        "Access to Electricity": "100",
+        "Trend in CO2 Emissions per kWh": "60.18"
+    },
+
+    "BGD":
+    {
+        "Child Mortality": "85.33",
+        "Household Air Quality": "95",
+        "Air Pollution - Average Exposure to PM2.5": "100",
+        "Air Pollution - PM2.5 Exceedance": "94.24",
+        "Access to Drinking Water": "80.68",
+        "Access to Sanitation": "92.27",
+        "Wastewater Treatment": "63.66",
+        "Agricultural Subsidies": "43.05",
+        "Pesticide Regulation": "80",
+        "Change in Forest Cover": "14.35",
+        "Coastal Shelf Fishing Pressure": "5.28",
+        "Fish Stocks": "1.39",
+        "Terrestrial Protected Areas (National Biome Weights)": "44",
+        "Terrestrial Protected Areas (Global Biome Weights)": "49.58",
+        "Marine Protected Areas": "59.81",
+        "Critical Habitat Protection": "100",
+        "Trend in Carbon Intensity": "54.67",
+        "Change of Trend in Carbon Intensity": "29.84",
+        "Access to Electricity": "100",
+        "Trend in CO2 Emissions per kWh": "60.18"
+    },
+
+    "BRB":
+    {
+        "Child Mortality": "85.33",
+        "Household Air Quality": "95",
+        "Air Pollution - Average Exposure to PM2.5": "100",
+        "Air Pollution - PM2.5 Exceedance": "94.24",
+        "Access to Drinking Water": "80.68",
+        "Access to Sanitation": "92.27",
+        "Wastewater Treatment": "63.66",
+        "Agricultural Subsidies": "43.05",
+        "Pesticide Regulation": "80",
+        "Change in Forest Cover": "14.35",
+        "Coastal Shelf Fishing Pressure": "5.28",
+        "Fish Stocks": "1.39",
+        "Terrestrial Protected Areas (National Biome Weights)": "44",
+        "Terrestrial Protected Areas (Global Biome Weights)": "49.58",
+        "Marine Protected Areas": "59.81",
+        "Critical Habitat Protection": "100",
+        "Trend in Carbon Intensity": "54.67",
+        "Change of Trend in Carbon Intensity": "29.84",
+        "Access to Electricity": "100",
+        "Trend in CO2 Emissions per kWh": "60.18"
+    },
+
+    "BLR":
+    {
+        "Child Mortality": "85.33",
+        "Household Air Quality": "95",
+        "Air Pollution - Average Exposure to PM2.5": "100",
+        "Air Pollution - PM2.5 Exceedance": "94.24",
+        "Access to Drinking Water": "80.68",
+        "Access to Sanitation": "92.27",
+        "Wastewater Treatment": "63.66",
+        "Agricultural Subsidies": "43.05",
+        "Pesticide Regulation": "80",
+        "Change in Forest Cover": "14.35",
+        "Coastal Shelf Fishing Pressure": "5.28",
+        "Fish Stocks": "1.39",
+        "Terrestrial Protected Areas (National Biome Weights)": "44",
+        "Terrestrial Protected Areas (Global Biome Weights)": "49.58",
+        "Marine Protected Areas": "59.81",
+        "Critical Habitat Protection": "100",
+        "Trend in Carbon Intensity": "54.67",
+        "Change of Trend in Carbon Intensity": "29.84",
+        "Access to Electricity": "100",
+        "Trend in CO2 Emissions per kWh": "60.18"
+    },
+
+    "BEL":
+    {
+        "Child Mortality": "85.33",
+        "Household Air Quality": "95",
+        "Air Pollution - Average Exposure to PM2.5": "100",
+        "Air Pollution - PM2.5 Exceedance": "94.24",
+        "Access to Drinking Water": "80.68",
+        "Access to Sanitation": "92.27",
+        "Wastewater Treatment": "63.66",
+        "Agricultural Subsidies": "43.05",
+        "Pesticide Regulation": "80",
+        "Change in Forest Cover": "14.35",
+        "Coastal Shelf Fishing Pressure": "5.28",
+        "Fish Stocks": "1.39",
+        "Terrestrial Protected Areas (National Biome Weights)": "44",
+        "Terrestrial Protected Areas (Global Biome Weights)": "49.58",
+        "Marine Protected Areas": "59.81",
+        "Critical Habitat Protection": "100",
+        "Trend in Carbon Intensity": "54.67",
+        "Change of Trend in Carbon Intensity": "29.84",
+        "Access to Electricity": "100",
+        "Trend in CO2 Emissions per kWh": "60.18"
+    },
+
+    "BLZ":
+    {
+        "Child Mortality": "85.33",
+        "Household Air Quality": "95",
+        "Air Pollution - Average Exposure to PM2.5": "100",
+        "Air Pollution - PM2.5 Exceedance": "94.24",
+        "Access to Drinking Water": "80.68",
+        "Access to Sanitation": "92.27",
+        "Wastewater Treatment": "63.66",
+        "Agricultural Subsidies": "43.05",
+        "Pesticide Regulation": "80",
+        "Change in Forest Cover": "14.35",
+        "Coastal Shelf Fishing Pressure": "5.28",
+        "Fish Stocks": "1.39",
+        "Terrestrial Protected Areas (National Biome Weights)": "44",
+        "Terrestrial Protected Areas (Global Biome Weights)": "49.58",
+        "Marine Protected Areas": "59.81",
+        "Critical Habitat Protection": "100",
+        "Trend in Carbon Intensity": "54.67",
+        "Change of Trend in Carbon Intensity": "29.84",
+        "Access to Electricity": "100",
+        "Trend in CO2 Emissions per kWh": "60.18"
+    },
+
+    "BEN":
+    {
+        "Child Mortality": "85.33",
+        "Household Air Quality": "95",
+        "Air Pollution - Average Exposure to PM2.5": "100",
+        "Air Pollution - PM2.5 Exceedance": "94.24",
+        "Access to Drinking Water": "80.68",
+        "Access to Sanitation": "92.27",
+        "Wastewater Treatment": "63.66",
+        "Agricultural Subsidies": "43.05",
+        "Pesticide Regulation": "80",
+        "Change in Forest Cover": "14.35",
+        "Coastal Shelf Fishing Pressure": "5.28",
+        "Fish Stocks": "1.39",
+        "Terrestrial Protected Areas (National Biome Weights)": "44",
+        "Terrestrial Protected Areas (Global Biome Weights)": "49.58",
+        "Marine Protected Areas": "59.81",
+        "Critical Habitat Protection": "100",
+        "Trend in Carbon Intensity": "54.67",
+        "Change of Trend in Carbon Intensity": "29.84",
+        "Access to Electricity": "100",
+        "Trend in CO2 Emissions per kWh": "60.18"
+    },
+
+    "BTN":
+    {
+        "Child Mortality": "85.33",
+        "Household Air Quality": "95",
+        "Air Pollution - Average Exposure to PM2.5": "100",
+        "Air Pollution - PM2.5 Exceedance": "94.24",
+        "Access to Drinking Water": "80.68",
+        "Access to Sanitation": "92.27",
+        "Wastewater Treatment": "63.66",
+        "Agricultural Subsidies": "43.05",
+        "Pesticide Regulation": "80",
+        "Change in Forest Cover": "14.35",
+        "Coastal Shelf Fishing Pressure": "5.28",
+        "Fish Stocks": "1.39",
+        "Terrestrial Protected Areas (National Biome Weights)": "44",
+        "Terrestrial Protected Areas (Global Biome Weights)": "49.58",
+        "Marine Protected Areas": "59.81",
+        "Critical Habitat Protection": "100",
+        "Trend in Carbon Intensity": "54.67",
+        "Change of Trend in Carbon Intensity": "29.84",
+        "Access to Electricity": "100",
+        "Trend in CO2 Emissions per kWh": "60.18"
+    },
+
+    "BOL":
+    {
+        "Child Mortality": "85.33",
+        "Household Air Quality": "95",
+        "Air Pollution - Average Exposure to PM2.5": "100",
+        "Air Pollution - PM2.5 Exceedance": "94.24",
+        "Access to Drinking Water": "80.68",
+        "Access to Sanitation": "92.27",
+        "Wastewater Treatment": "63.66",
+        "Agricultural Subsidies": "43.05",
+        "Pesticide Regulation": "80",
+        "Change in Forest Cover": "14.35",
+        "Coastal Shelf Fishing Pressure": "5.28",
+        "Fish Stocks": "1.39",
+        "Terrestrial Protected Areas (National Biome Weights)": "44",
+        "Terrestrial Protected Areas (Global Biome Weights)": "49.58",
+        "Marine Protected Areas": "59.81",
+        "Critical Habitat Protection": "100",
+        "Trend in Carbon Intensity": "54.67",
+        "Change of Trend in Carbon Intensity": "29.84",
+        "Access to Electricity": "100",
+        "Trend in CO2 Emissions per kWh": "60.18"
+    }
 }
