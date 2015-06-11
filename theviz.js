@@ -971,9 +971,9 @@ function initLine(){
             renderTo: 'lineChart',
             plotShadow: true,
             marginLeft: 50,
-            marginRight: 100px,
-            marginTop: 15px,
-            marginBottom: 15px,
+            marginRight: 100,
+            marginTop: 15,
+            marginBottom: 15,
             events: {
                 load: function () {
                 	//this.renderer.image('/logo.png', 0, 0, 96, 40).add();
