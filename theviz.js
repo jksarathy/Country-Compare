@@ -32,27 +32,20 @@ var max_val = 1;
 runCharts();
 
 // JSON for select Boxes 
-d3.json("/country_list.json", function(error, json) { // http://localhost/country_list.json
+d3.json("/country_list.json", function(error, json) { 
     var selecthtml = "";
     var active = 0;
     $.each(json, function(name, iso) {
         selecthtml +="<option value=\"" + iso + "\">" + name + "</option>";
     }); 
-    /*$.each(countryselection, function(i, d) {
-        //$("#clist").append("<select class='clist' id='c" + i + "'>"+selecthtml+"</select>");
-        $("#c"+i+" option[value='" + d + "']").prop('selected', true);
-        active++;
-    });*/
 
     $("#clist").append("<select class='clist' multiple id='edit-select-countries'>"+selecthtml+"</select>");
-    //$("#clist").append("<input id='submit_button' type='submit' value='Generate Charts'/>");
 
     $("#edit-select-countries").select2( {
     	maximumSelectionLength: 3
     });
     
     // Event for checkbox change
-    //$(".clist").change(function(){
     $("#submit_button").click(function() {
     	var new_countryselection = $('#edit-select-countries').select2("val");
     	countryselection = (new_countryselection == null) ? countryselection : new_countryselection;
@@ -60,15 +53,6 @@ d3.json("/country_list.json", function(error, json) { // http://localhost/countr
     	sparkCountry = countryselection[0];
     	runCharts();
 	});
-	
-	/*$(".ind").change(function(){
-		drawMap();
-	});*/
-    
-    //drawMap();
-    //drawSpark(sparkCountry);
-    //initLine();
-    //initRoses();
 
 });
 
@@ -79,8 +63,9 @@ d3.json("/indicator_list.json", function(error, json) {
 
 	$("#submit_button").click(function() {
 		var selected_val = $("#select_ind").val();
-		//window.alert(selected_val);
-		indicator = indicators[selected_val];
+		var new_indicator = indicators[selected_val];
+		console.log(new_indicator);
+		indicator = (new_indicator == null) ? indicator : new_indicator;
 		runCharts();
 	});
 });
@@ -94,8 +79,10 @@ d3.json("/issue_list.json", function(error, json) {
 		var selected_id = indicator.id;
 		//window.alert(selected_id);
 		var group_num = $(selected_id).parent().attr("value"); //not working yet
-		//window.alert(group_num);
-		issue = issues[group_num];
+
+		var new_issue = issues[group_num];
+		console.log(new_issue);
+		issue = (new_issue == null) ? issue : new_issue;
 		runCharts();
 	});
 });
@@ -138,7 +125,7 @@ function runCharts() {
 	//drawSpark(sparkCountry);
 	initLine();
 	$.each(countryselection, function(i, d) {
-    	//drawLine(i,d);
+    	drawLine(i,d);
     	addTable(i, d);
     	//drawGauge(i, d);
     	drawRose(i, d);
