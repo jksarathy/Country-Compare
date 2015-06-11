@@ -879,7 +879,8 @@ function emptyRose(key){
 				//margin: [0,0,0,0],
 				//spacing: [0, 0, 0, 0]
 				//width: 150
-				height: 150
+				height: 150,
+				width: 150
 			},
 			series: [{
 				type: 'column',
@@ -916,7 +917,9 @@ function emptyRose(key){
 				labels: {
 					enabled: false
 				},
-				gridLineWidth: 0
+				gridLineWidth: 0,
+				minPadding:0,
+				maxPadding:0
 			},
 			yAxis: {
 				endOnTick: false,
