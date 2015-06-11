@@ -79,7 +79,7 @@ d3.json("/issue_list.json", function(error, json) {
 		var selected_id = indicator.id;
 		//window.alert(selected_id);
 		var group_num = $(selected_id).parent().attr("value"); //not working yet
-
+		console.log(group_num);
 		var new_issue = issues[group_num];
 		console.log(new_issue);
 		issue = (new_issue == null) ? issue : new_issue;
@@ -727,8 +727,8 @@ function drawRose(key, country) {
 	//d3.json("/radar_chart.json?years[]=2012&"+url, function(error, json) {
 	d3.json("/indicator_scores.json", function(error, json) {
 
-		console.log(json);
 		var ind_scores = json[country];
+		console.log(ind_scores);
 		var selected_ind_score = ind_scores[indicator.name];
 		var dat = [];
 
