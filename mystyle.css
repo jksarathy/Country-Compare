@@ -76,11 +76,11 @@ th, td {
 input {
   background-color: #5C5C5C;
   color: white;
-  position: absolute;
+  position: relative;
   right: 10px;
   bottom: 15px;
   border-radius: 8px;
-  width: 130px;
+  /*width: 130px;*/
 }
 
 #clist, #categories, input {display: inline-block; font-size: 12px; vertical-align: top;}
@@ -92,7 +92,17 @@ input {
 }
 
 select {
-  font-size: 12px;
+  height: 15px;
+}
+
+.select2-container {
+  width: 260px;
+  height: 15px;
+}
+
+#select-ind {
+  -webkit-appearance: none;
+  background: url(/select2.png) no-repeat right;
 }
 
 
