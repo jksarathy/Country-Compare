@@ -873,9 +873,7 @@ function emptyRose(key){
 				plotBackgroundColor: null,
 				plotBackgroundImage: null,
 				backgroundColor: null,
-				plotBorderWidth: 1,
-				margin: null,
-				spacing: null
+				plotBorderWidth: 1
 			},
 			series: [{
 				type: 'column',
