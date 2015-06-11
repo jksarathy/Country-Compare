@@ -28,6 +28,8 @@ div {
 th {
   background-color: #C0C0C0;
   color: white;
+  text-transform: uppercase;
+  font-size: 10px;
 }
 
 td {
@@ -43,9 +45,9 @@ th, td {
   text-align: center;
 }
 
-.gauge-charts {
+/*.rose-charts {
   width: 200px;
-}
+}*/
 
 .container {
   width: 70%;

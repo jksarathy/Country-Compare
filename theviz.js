@@ -14,6 +14,7 @@ var sdat = new Array();
 var main = d3.select('#maincontainer');
 var countryselection = ["CHN","IND","USA"] ; 
 var url = "";
+var indicatorselection = ["0", "0", "0"];
 
 var issue = {id: "EH_HealthImpacts", name: "Health Impacts", color: "#ff9600"};
 var indicator = {name: "Child Mortality", id: "CHMORT", units: "Probability", shortunits: ""};
@@ -120,14 +121,31 @@ pie = d3.layout.pie()
     return 1;
 });
 
+function clearTable() {
+	var table_html = "<tr>
+						<th>Rose Chart</th>
+						<th>Country</th>
+						<th>2014 " + indicator.name + " Score</th>
+						<th>2014 " + issue.name + " Score</th>
+					</tr>";
+	$("#chartTable").replace(table_html);
+}
 function addTable(i, country) {
-	var table_html = "<tr> <td class='gauge-charts' id='table" + i + "'></td> <td>" + country + "</td> <td>Indicator Score</td> <td>Policy Issue Score</td> </tr>";
+	var table_html = 
+					"<tr> 
+						<td class='rose-charts' id='table" + i + "'></td> 
+						<td>" + country + "</td> 
+						<td id ='ind" + i + "'>Indicator Score</td> 
+						<td>Policy Issue Score</td> 
+					</tr>";
+
 	$("#chartTable").append(table_html);
 }
 
 function runCharts() {
+	clearTable();
 	//drawRichMap();
-	testMap();
+	//testMap();
 	//drawMap();
 	//drawSpark(sparkCountry);
 	initLine();
@@ -139,7 +157,7 @@ function runCharts() {
     });
 }
 
-function drawGauge(key, country) {
+/*function drawGauge(key, country) {
 	//window.alert(key);
 	//window.alert(country);
 	html_id = "#table" + key;
@@ -166,7 +184,7 @@ function drawGauge(key, country) {
 				/*size:[30],
         		startAngle: -90,
         		center: ['50%', '90%'],
-        		endAngle: 90,*/
+        		endAngle: 90, //
 				startAngle: -150,
 				endAngle: 150,
 				center: ['50%', '50%'],
@@ -271,7 +289,7 @@ function drawGauge(key, country) {
     return empty;
 }*/
 
-function drawRichMap() {
+/*function drawRichMap() {
 
     // For each country, use the latest value for current population
     var data = [];
@@ -370,7 +388,7 @@ function drawRichMap() {
     		if (countryChart) {
     			countryChart = countryChart.destroy();
     		}
-    	} */
+    	} //
     }); 
     // Initiate the map chart
     console.log(data, mapData);
@@ -418,9 +436,9 @@ function drawRichMap() {
     		}
     	}]
     }).highcharts();
-}
+} */
 
-function testMap() {
+/*function testMap() {
 	$.getJSON('//www.highcharts.com/samples/data/jsonp.php?filename=world-population-history.csv&callback=?', function (csv) {
 
         // Parse the CSV Data
@@ -430,7 +448,7 @@ function testMap() {
             parsed: function () {
                 console.log(this.columns);
             }
-        });*/
+        });//
 
         // Very simple and case-specific CSV string splitting
         function CSVtoArray(text) {
@@ -590,7 +608,7 @@ function testMap() {
                 if (countryChart) {
                     countryChart = countryChart.destroy();
                 }
-            }*/
+            }//
 
             
 
@@ -599,6 +617,9 @@ function testMap() {
         // Initiate the map chart
         mapChart = $('#map').highcharts('Map', {
             
+            chart: {
+            	plotShadow: true
+            }
             title : {
                 text : 'Population history by country'
             },
@@ -645,7 +666,7 @@ function testMap() {
         // Pre-select a country
         mapChart.get('us').select();
     });
-}
+}*/
 
 function drawMap(){
 	var data = [];
@@ -733,7 +754,10 @@ function drawRose(key, country) {
 
 		console.log(json);
 		var ind_scores = json[country];
+		var selected_ind_score = ind_scores[indicator.name];
 		var dat = [];
+
+		$("ind" + key).replace(selected_ind_score);
 
 		$.each(ind_scores, function (name, iso) {
 			var value = parseFloat(iso)
@@ -877,7 +901,8 @@ function emptyRose(key){
 				backgroundColor: null,
 				plotBorderWidth: 0,
 				margin: [0,0,0,0],
-				spacing: [0, 0, 0, 0]
+				spacing: [0, 0, 0, 0],
+				width: 150
 			},
 			series: [{
 				type: 'column',
@@ -945,6 +970,9 @@ function emptyRose(key){
 				series: {
 					pointStart: 0,
 				},
+			},
+			exporting: {
+         		enabled: false
 			}
 		};
 	
@@ -966,6 +994,7 @@ function initLine(){
 		chart: {
 			type: 'line',
             renderTo: 'lineChart',
+            plotShadow: true,
             events: {
                 load: function () {
                 	//this.renderer.image('/logo.png', 0, 0, 96, 40).add();
