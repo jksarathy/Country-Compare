@@ -91,17 +91,22 @@ input {
 
 #clist, #categories, input {display: inline-block; font-size: 12px; vertical-align: top;}
 #clist {
-  width: 300px;
+  width: 250px;
+  padding-left: 10px;
 }
 
 .select2-container {
-  width: 300px;
-  height: 15px;
+  width: 200px;
+}
+
+#categories {
+  width: 400px;
+  padding: 10px;
 }
 
 #select-ind {
-  width: 400px;
-  -webkit-appearance: none;
+  width: 300px;
+  webkit-appearance: none;
   background: url(/select2.png) no-repeat right;
 }
 
