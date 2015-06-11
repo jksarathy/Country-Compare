@@ -14,7 +14,7 @@ h2 {
   font-family: "Helvetica Neue";
 }
 
-h5 {
+h5, h4 {
   font-weight: bold;
   font-family: "Helvetica Neue";
 }
@@ -23,7 +23,7 @@ h6 {
   font-weight: bold;
 }
 
-h8 {
+h8, h4 {
   text-transform: uppercase;
 }
 
