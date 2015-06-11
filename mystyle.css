@@ -18,6 +18,10 @@ h6 {
   font-weight: bold;
 }
 
+h7 {
+  text-transform: uppercase;
+}
+
 div {
   /*border: 1px solid;*/
   /*margin: 20px;*/
@@ -76,27 +80,17 @@ th, td {
 input {
   background-color: #5C5C5C;
   color: white;
-  position: relative;
-  right: 10px;
-  bottom: 15px;
   border-radius: 8px;
-  /*width: 130px;*/
+  width: 100px;
 }
 
 #clist, #categories, input {display: inline-block; font-size: 12px; vertical-align: top;}
 #clist {
-  width: 50%;
-}
-#categories, input {
-  width: 25%;
-}
-
-select {
-  height: 15px;
+  width: 460px;
 }
 
 .select2-container {
-  width: 260px;
+  width: 460px;
   height: 15px;
 }
 
