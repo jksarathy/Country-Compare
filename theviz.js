@@ -41,7 +41,8 @@ d3.json("/country_list.json", function(error, json) {
     $("#clist").append("<select class='clist' multiple id='edit-select-countries'>"+selecthtml+"</select>");
 
     $("#edit-select-countries").select2( {
-    	maximumSelectionLength: 3
+    	maximumSelectionLength: 3,
+    	placeholder: "Start Typing..."
     });
     
     // Event for checkbox change
@@ -872,9 +873,9 @@ function emptyRose(key){
 				plotBackgroundColor: null,
 				plotBackgroundImage: null,
 				backgroundColor: null,
-				plotBorderWidth: 0,
+				plotBorderWidth: 3,
 				margin: [0,0,0,0],
-				spacing: [5, 5, 5, 5]
+				spacing: [0, 0, 0, 0]
 				//width: 150
 			},
 			series: [{
