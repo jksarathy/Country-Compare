@@ -138,7 +138,7 @@ function runCharts() {
 	//drawSpark(sparkCountry);
 	initLine();
 	$.each(countryselection, function(i, d) {
-    	drawLine(i,d);
+    	//drawLine(i,d);
     	addTable(i, d);
     	//drawGauge(i, d);
     	drawRose(i, d);
@@ -889,8 +889,8 @@ function emptyRose(key){
 				backgroundColor: null,
 				plotBorderWidth: 0,
 				margin: [0,0,0,0],
-				spacing: [0, 0, 0, 0],
-				width: 150
+				spacing: [5, 5, 5, 5]
+				//width: 150
 			},
 			series: [{
 				type: 'column',
