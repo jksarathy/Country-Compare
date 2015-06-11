@@ -91,7 +91,7 @@ input {
 
 #clist, #categories, input {display: inline-block; font-size: 12px; vertical-align: top;}
 #clist {
-  width: 30px;
+  width: 300px;
 }
 
 .select2-container {
