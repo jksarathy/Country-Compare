@@ -874,8 +874,10 @@ function emptyRose(key){
 				plotBackgroundImage: null,
 				backgroundColor: null,
 				plotBorderWidth: 3,
-				margin: [0,0,0,0],
-				spacing: [0, 0, 0, 0]
+				marginLeft: 0,
+				spacingRight: 0 
+				//margin: [0,0,0,0],
+				//spacing: [0, 0, 0, 0]
 				//width: 150
 			},
 			series: [{
@@ -887,7 +889,7 @@ function emptyRose(key){
 				text: ''
 			},
 			pane: {
-				size: [50],
+				//size: [50],
 				startAngle: 0,
 				endAngle: 360,
 				background: {
@@ -970,10 +972,10 @@ function initLine(){
 			type: 'line',
             renderTo: 'lineChart',
             plotShadow: true,
-            spacingLeft: 50,
+            spacingLeft: 30,
             spacingRight: 50,
-            spacingTop: 15,
-            spacingBottom: 15,
+            spacingTop: 20,
+            spacingBottom: 20,
             events: {
                 load: function () {
                 	//this.renderer.image('/logo.png', 0, 0, 96, 40).add();
@@ -985,7 +987,7 @@ function initLine(){
                                 }
                             }, false);
                         });
-                        this.renderer.image('/logo.png', 0, 0, 96, 40).add();
+                       // this.renderer.image('/logo.png', 0, 0, 96, 40).add();
                     	this.redraw();
                     }
                 }
@@ -1019,11 +1021,9 @@ function initLine(){
 		}
 	};
 	lineChart = new Highcharts.Chart(options, function(chart) {
-		chart.renderer.image('/logo.png', 0, 0, 96, 40).add();
+		//chart.renderer.image('/logo.png', 0, 0, 96, 40).add();
 	});
-	/*lineChart = new Highcharts.Chart(options, function(chart) {
-		this.renderer.image('/logo.png', 0, 0, 100, 100).add();
-	});*/
+
 	
 	
 	for(var x=0; x<countryselection.length; x++){
