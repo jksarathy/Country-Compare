@@ -12,7 +12,7 @@ var innerradius = 25;
 var numTicks = 5;
 var sdat = new Array();
 var main = d3.select('#maincontainer');
-var countryselection = ["CHN","IND","USA"] ; 
+var countryselection = [{name:"China", id: "CHN"},{name: "India", id: "IND"}, {name: "United States of America", id: "USA"}]; 
 var url = "";
 
 var issue = {id: "EH_HealthImpacts", name: "Health Impacts", color: "#ff9600"};
@@ -47,10 +47,13 @@ d3.json("/country_list.json", function(error, json) {
     
     // Event for checkbox change
     $("#submit_button").click(function() {
-    	var new_countryselection = $('#edit-select-countries').select2("val");
+    	var countryselection_id = $('#edit-select-countries').select2("val");
+    	var countryselection_name = $('#edit-select-countries').select2("data");
+    	var new_countryselection = [];
+    	$.each(countryselection_id, function(index, element) {
+    		new_countryselection[index] = {"name": countryselection_name[index], "id": countryselection_id[index]};
+    	})
     	countryselection = (new_countryselection == null) ? countryselection : new_countryselection;
-
-    	sparkCountry = countryselection[0];
     	runCharts();
 	});
 
@@ -112,7 +115,7 @@ function clearTable() {
 	$("#chartTable").html(header_html);
 }
 function addTable(i, country) {
-	var table_html = "<tr><td><div class='rose-charts' id='table" + i + "'</div></td><td>" + country + "</td><td>100</td><td>1</td><td id ='ind" + i + "'>Indicator Score</td><td>Policy Issue Score</td></tr>";
+	var table_html = "<tr><td><div class='rose-charts' id='table" + i + "'</div></td><td>" + country + "</td><td id ='epi_score" + i + "'>EPI Score</td><td id ='epi_rank" + i + "'>EPI Rank</td><td id ='ind" + i + "'>Indicator Score</td><td>Policy Issue Score</td></tr>";
 	$("#chartTable").append(table_html);
 }
 
@@ -124,10 +127,10 @@ function runCharts() {
 	//drawSpark(sparkCountry);
 	initLine();
 	$.each(countryselection, function(i, d) {
-    	drawLine(i,d);
-    	addTable(i, d);
+    	drawLine(i,d.id);
+    	addTable(i, d.name);
     	//drawGauge(i, d);
-    	drawRose(i, d);
+    	drawRose(i, d.name);
     });
 }
 
@@ -724,7 +727,7 @@ function drawRose(key, country) {
 	var chart = roseCharts[key];
 	
 	//d3.json("/radar_chart.json?years[]=2012&"+url, function(error, json) {
-	d3.json("/indicator_scores.json", function(error, json) {
+	/*d3.json("/indicator_scores.json", function(error, json) {
 
 		var ind_scores = json[country];
 		var selected_ind_score = ind_scores[indicator.name];
@@ -732,6 +735,20 @@ function drawRose(key, country) {
 		var dat = [];
 
 		$("#ind" + key).html(selected_ind_score);
+
+		$.each(ind_scores, function (name, iso) {*/
+
+	d3.json("/epi_data.json", function(error, json) {
+
+		var scores = json[country];
+		var epi_score = scores["EPI Score"];
+		var epi_rank = scores["Rank"];
+		var selected_ind_score = scores[indicator.name];
+		//var selected_iss_score = scores[issue.name]; need to fix format of key
+
+		$("#ind" + key).html(selected_ind_score);
+		$("#epi_score" + key).html(epi_score);
+		$("#epi_rank" + key).html(epi_rank);
 
 		$.each(ind_scores, function (name, iso) {
 			var value = parseFloat(iso)
@@ -841,7 +858,10 @@ function drawRose(key, country) {
 			else if (name == "Trend in CO2 Emissions per kWh"){
 				col = "#7D8FC8";
 				idx = 17;
-				ind = "Tred in CO2 Emissions";
+				ind = "Trend in CO2 Emissions";
+			}
+			else {
+				return;
 			}
 			//options.series[0].data.push({name: obj.name, y: y, color: col, realY: value});
 			dat.push({name: name, y: y, color: col, realY: value, indic: ind});
