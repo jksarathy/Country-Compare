@@ -123,7 +123,7 @@ pie = d3.layout.pie()
 
 function clearTable() {
 	var header_html = "<tr><th>Rose Chart</th><th>Country</th><th>2014 " + indicator.name + " Score</th><th>2014 " + issue.name + " Score</th></tr>";
-	$("#chartTable").replace(header_html);
+	$("#chartTable").html(header_html);
 }
 function addTable(i, country) {
 	var table_html = "<tr><td class='rose-charts' id='table" + i + "'></td><td>" + country + "</td><td id ='ind" + i + "'>Indicator Score</td><td>Policy Issue Score</td></tr>";
@@ -745,7 +745,7 @@ function drawRose(key, country) {
 		var selected_ind_score = ind_scores[indicator.name];
 		var dat = [];
 
-		$("ind" + key).replace(selected_ind_score);
+		$("ind" + key).html(selected_ind_score);
 
 		$.each(ind_scores, function (name, iso) {
 			var value = parseFloat(iso)
