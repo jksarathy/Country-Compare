@@ -887,6 +887,7 @@ function emptyRose(key){
 				text: ''
 			},
 			pane: {
+				size: [50],
 				startAngle: 0,
 				endAngle: 360,
 				background: {

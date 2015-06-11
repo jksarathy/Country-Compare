@@ -11,14 +11,19 @@ body {
 
 h2 {
   font-weight: 100;
+  font-family: "Helvetica Neue";
 }
 
+h5 {
+  font-weight: bold;
+  font-family: "Helvetica Neue";
+}
 h6 {
   color: #2090FF;
   font-weight: bold;
 }
 
-h7 {
+h8 {
   text-transform: uppercase;
 }
 
@@ -81,20 +86,21 @@ input {
   background-color: #5C5C5C;
   color: white;
   border-radius: 8px;
-  width: 100px;
+  width: 150px;
 }
 
 #clist, #categories, input {display: inline-block; font-size: 12px; vertical-align: top;}
 #clist {
-  width: 460px;
+  width: 30px;
 }
 
 .select2-container {
-  width: 460px;
+  width: 300px;
   height: 15px;
 }
 
 #select-ind {
+  width: 400px;
   -webkit-appearance: none;
   background: url(/select2.png) no-repeat right;
 }
