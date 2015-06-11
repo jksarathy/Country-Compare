@@ -873,14 +873,7 @@ function emptyRose(key){
 				plotBackgroundColor: null,
 				plotBackgroundImage: null,
 				backgroundColor: null,
-				plotBorderWidth: 3,
-				marginLeft: 0,
-				spacingRight: 0,
-				//margin: [0,0,0,0],
-				//spacing: [0, 0, 0, 0]
-				//width: 150
-				height: 150,
-				width: 150
+				plotBorderWidth: 1
 			},
 			series: [{
 				type: 'column',
@@ -891,8 +884,6 @@ function emptyRose(key){
 				text: ''
 			},
 			pane: {
-				//size: [50],
-				center: ['20%', '50%'],
 				startAngle: 0,
 				endAngle: 360,
 				background: {
