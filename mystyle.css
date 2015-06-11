@@ -54,7 +54,7 @@ th, td {
   /*padding: 0;*/
   border-top: 1px #C0C0C0 solid;
   text-align: center;
-  border: 1px solid;
+  /*border: 1px solid;*/
 }
 
 .rose-charts {
@@ -67,10 +67,10 @@ th, td {
 }
 
 #lineChart {
-  width: 1000px;
+  width: 950px;
   height: 600px;
-  max-width: 1000px;
-  min-width: 1000px;
+  max-width: 950px;
+  min-width: 950px;
   max-height: 600px;
   min-height: 600px;
   padding: 0;
@@ -81,16 +81,16 @@ th, td {
   height: 100%;
   margin: 0 auto;
   padding: 0;
-  min-width: 1000px;
-  max-width: 1000px;
+  min-width: 950px;
+  max-width: 950px;
 }
 
 table {
   width: 80%;
   padding: 0;
   margin: 0 auto;
-  min-width: 1000px;
-  max-width: 1000px;
+  min-width: 950px;
+  max-width: 950px;
 
 }
 
@@ -115,13 +115,13 @@ input {
   color: white;
   width: 130px;
   position: relative;
-  top: 60px;
+  top: 50px;
   left: 50px;
 }
 
-#clist, #categories, input {display: inline-block; font-size: 12px; vertical-align: top; height: 100%;}
+#clist, #categories, input {display: inline-block; vertical-align: top; height: 100%;}
 #clist {
-  width: 350px;
+  width: 300px;
   padding-left: 10px;
 }
 
@@ -130,7 +130,7 @@ input {
 }*/
 
 #categories {
-  width: 350px;
+  width: 300px;
   /*padding: 10px;*/
 }
 
