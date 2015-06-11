@@ -744,12 +744,8 @@ function drawRose(key, country) {
 
 		var scores = json[country];
 		var epi_score = scores["EPI Score"];
-		console.log(epi_score);
 		var epi_rank = scores["Rank"];
-		console.log(epi_rank);
 		var selected_ind_score = scores[indicator.name];
-		console.log(selected_ind_score);
-
 		var dat = [];
 		//var selected_iss_score = scores[issue.name]; need to fix format of key
 
@@ -899,7 +895,7 @@ function emptyRose(key){
 				renderTo: 'table' + key,
 				plotBackgroundColor: null,
 				plotBackgroundImage: null,
-				backgroundColor: '#C0C0C0',
+				backgroundColor: null, //'#C0C0C0',
 				plotBorderWidth: 0
 			},
 			series: [{
@@ -1073,19 +1069,8 @@ function drawLine(key, country){
 			for(var year = 2002; year<2013; year++)
 				dat.push({x: year, y: -1});
 		}
-		/*else{
-			indicatorData = json.data[0].values; 
-			$.map(indicatorData, function(obj, i) {
-				dat.push({x: parseInt(obj.year), y: parseInt(obj.value)});
-			});
-		}
-		lineChart.series[key].setData(dat, true);*/
 
-		//copied from spark chart
-		/*if (! (sparkChart === undefined))
-			sparkChart.destroy();*/
 		var data = json.indicator_trend;	
-		//sparkCountry = country;
 		
 		// Trim trailing NA's
 		var x = 0;
@@ -1137,8 +1122,6 @@ function drawLine(key, country){
             });
 		lineChart.series[key].setData(dat, true);
 		lineChart.series[key].update({name: country, color: col}, true);
-
-
 	});
 }
 
