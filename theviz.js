@@ -891,7 +891,7 @@ function emptyRose(key){
 			},
 			pane: {
 				//size: [50],
-				center: ['30%', '50%'],
+				center: ['20%', '50%'],
 				startAngle: 0,
 				endAngle: 360,
 				background: {

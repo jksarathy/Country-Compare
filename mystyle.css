@@ -48,7 +48,7 @@ th {
 
 th, td {
   width: 100%;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   padding: 25px;
   border-top: 1px #C0C0C0 solid;
   text-align: center;
