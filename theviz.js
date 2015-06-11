@@ -970,10 +970,10 @@ function initLine(){
 			type: 'line',
             renderTo: 'lineChart',
             plotShadow: true,
-            marginLeft: 10px,
-            marginRight: 30px,
-            marginTop: 10px,
-            marginBottom: 10px,
+            marginLeft: 50,
+            marginRight: 100px,
+            marginTop: 15px,
+            marginBottom: 15px,
             events: {
                 load: function () {
                 	//this.renderer.image('/logo.png', 0, 0, 96, 40).add();
