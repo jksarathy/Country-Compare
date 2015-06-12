@@ -137,9 +137,10 @@ input {
   background-color: #5C5C5C;
   color: white;
   width: 130px;
-  position: relative;
+  /*position: relative;
   top: 60px;
-  left: 120px;
+  left: 120px;*/
+  float: right;
 }
 
 #clist, #categories, input {display: inline-block; vertical-align: top; height: 100%;}
@@ -164,7 +165,7 @@ input {
   bottom: 25%;
 }
 
-#select-ind, .select2-choice {
+/*#select-ind, .select2-choice {
   font-family: 'pf_centro_sans_proregular', sans-serif;
   color: #4c4c4c;
   box-shadow: 0 0 1px 1px #fff inset;
@@ -177,6 +178,25 @@ input {
   -webkit-font-smoothing: antialiased;
   background: url(/select2.png) no-repeat right;
   text-shadow: -1px 1px 0px rgba(255, 255, 255, 0.9);
+}*/
+
+select.custom-dropdown {
+  -webkit-appearance: none;  /*REMOVES DEFAULT CHROME & SAFARI STYLE*/
+  -moz-appearance: none;  /*REMOVES DEFAULT FIREFOX STYLE*/
+  border: 0 !important;  /*REMOVES BORDER*/
+  background-color: #C0C0C0;
+  color: #4c4c4c;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: 'pf_centro_sans_proregular', sans-serif;
+  padding: 10px;
+  width: 300px;
+  cursor: pointer;
+  background: #C0C0C0 url(select2.png) no-repeat right center;
+  background-size: 40px 37px; /*TO ACCOUNT FOR @2X IMAGE FOR RETINA */
+  text-shadow: -1px 1px 0px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 1px 1px #fff inset;
 }
 
 
