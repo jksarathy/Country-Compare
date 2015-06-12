@@ -124,6 +124,7 @@ table {
   border-radius: 3px;
   margin-top: 25px;
   margin-bottom: 25px;
+  padding: 0;
 }
 
 .map, #lineChart, .maincontainer {
@@ -143,7 +144,7 @@ input {
 
 #clist, #categories, input {display: inline-block; vertical-align: top; height: 100%;}
 #clist {
-  width: 300px;
+  /*width: 300px;*/
   padding-left: 10px;
 }
 
@@ -163,12 +164,20 @@ input {
   bottom: 25%;
 }
 
-/*#select-ind {
+#select-ind, .select2-choice {
+  font-family: 'pf_centro_sans_proregular', sans-serif;
+  color: #4c4c4c;
+  box-shadow: 0 0 1px 1px #fff inset;
+  border: 1px solid #b3b3b3;
+  height: 26px;
   width: 300px;
+  line-height: 2.4rem;
   font-size: 11px;
   webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
   background: url(/select2.png) no-repeat right;
-}*/
+  text-shadow: -1px 1px 0px rgba(255, 255, 255, 0.9);
+}
 
 
 

@@ -41,8 +41,8 @@ d3.json("/country_list.json", function(error, json) {
     $("#clist").append("<select class='clist' multiple id='edit-select-countries'>"+selecthtml+"</select>");
 
     $("#edit-select-countries").select2( {
-    	maximumSelectionLength: 3,
-    	placeholder: "Start Typing..."
+    	maximumSelectionLength: 3
+    	//placeholder: "Start Typing..."
     });
     
     // Event for checkbox change
