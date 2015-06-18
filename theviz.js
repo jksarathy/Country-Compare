@@ -1108,11 +1108,11 @@ function drawLine(){
 			});
 
 			var col = "";
-			if (key == 0)
+			if (i == 0)
 				col = "#26CBDA";
-			else if (key == 1)
+			else if (i == 1)
 				col = "#FF9600";
-			else if (key == 2)
+			else if (i == 2)
 				col = "#12E25C";
 
 			var extremes = lineChart.yAxis[0].getExtremes();
@@ -1132,8 +1132,8 @@ function drawLine(){
 					text: indicator.name.toUpperCase()
 				}
 			});
-			lineChart.series[key].setData(dat, true);
-			lineChart.series[key].update({name: country.id, color: col}, true);
+			lineChart.series[i].setData(dat, true);
+			lineChart.series[i].update({name: country.id, color: col}, true);
 
 		});
 
