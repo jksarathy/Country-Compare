@@ -130,7 +130,7 @@ table {
   margin: 5px;
   padding: 0;
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .map, #lineChart, .maincontainer {
@@ -139,12 +139,12 @@ table {
   margin-bottom: 35px;
 }
 
-/*#clist, #categories, #input-wrapper
+#clist, #categories, #input-wrapper
 {
-  display: inline-block; 
-  vertical-align: top; 
-  height: 100%;
-}*/
+  /*display: inline-block; */
+  /*vertical-align: top; 
+  height: 100%;*/
+}
 #clist {
   width: 40%;
   -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
