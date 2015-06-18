@@ -124,15 +124,16 @@ function addTable(i, country) {
 
 function runCharts() {
 	clearTable();
+	drawLine();
 	//drawRichMap();
 	//testMap();
 	//drawMap();
 	//drawSpark(sparkCountry);
 	initLine();
 	$.each(countryselection, function(i, d) {
-		console.log("about to draw line");
-		console.log(d.id);
-    	drawLine(i, d.id);
+		//console.log("about to draw line");
+		//console.log(d.id);
+    	//drawLine(i, d.id);
     	addTable(i, d.name);
     	//drawGauge(i, d);
     	drawRose(i, d.name);
@@ -1058,78 +1059,85 @@ function initLine(){
 	
 }
 
-function drawLine(key, country){
-	console.log(country);
-	console.log("hello");
+function drawLine(){
+	//console.log(country);
+	//console.log("hello");
 	var indicatorid = (indicator.id == "CO2GDPd2") ? "CO2GDPd1" : indicator.id;
 	var x = 0;
     // JSON for line graph
     //"/line_graph.json?indicator=" + indicator.id + "&iso_codes[]=" + country
-    d3.json("http://epi.yale.edu/api/raw_data.json?country=" + country + "&indicator=" + indicatorid, function(error, json) {
-		//var dat = [];
+    $.each(countryselection, function(i, country) {
+    	d3.json("http://epi.yale.edu/api/raw_data.json?country=" + country.id + "&indicator=" + indicatorid, function(error, json) {
 
-		console.log("in d3");
-		
-		if (json === undefined){
-			window.alert("json undefined");
-			for(var year = 2002; year<2013; year++)
-				dat.push({x: year, y: -1});
-		}
 
-		var data = json.indicator_trend;	
+			console.log("in d3");
+
 		
-		// Trim trailing NA's
-		var x = 0;
-		while(data[x] != null && data[x].value == "NA") x++;
-		data.splice(0, x);
-		
-		// Trim ending NA's
-		x = data.length-1;
-		while(x > 0 && data[x].value == "NA") x--;
-		data.splice(x+1, data.length);
-		
-		var dat = [];
-		var min = 0.0;
-		var max = 0.0;
-		$.map(data, function(obj, i) {
-			var mark = false;
-			if (i == 0 || i == data.length-1) mark = true;
-			var val = parseFloat(obj.value);
-			if (isNaN(val)) val = null;
-			else {
-				if (val < min) min = val;
-				if (val > max) max = val;
+
+			if (json === undefined){
+				window.alert("json undefined");
+				for(var year = 2002; year<2013; year++)
+					dat.push({x: year, y: -1});
 			}
-			dat.push({x: parseInt(obj.year), y: val, marker: {enabled: mark}});
+
+			var data = json.indicator_trend;	
+
+			// Trim trailing NA's
+			var x = 0;
+			while(data[x] != null && data[x].value == "NA") x++;
+			data.splice(0, x);
+		
+			// Trim ending NA's
+			x = data.length-1;
+			while(x > 0 && data[x].value == "NA") x--;
+			data.splice(x+1, data.length);
+		
+			var dat = [];
+			var min = 0.0;
+			var max = 0.0;
+			$.map(data, function(obj, i) {
+				var mark = false;
+				if (i == 0 || i == data.length-1) mark = true;
+				var val = parseFloat(obj.value);
+				if (isNaN(val)) val = null;
+				else {
+					if (val < min) min = val;
+					if (val > max) max = val;
+				}
+				dat.push({x: parseInt(obj.year), y: val, marker: {enabled: mark}});
+			});
+
+			var col = "";
+			if (key == 0)
+				col = "#26CBDA";
+			else if (key == 1)
+				col = "#FF9600";
+			else if (key == 2)
+				col = "#12E25C";
+
+			var extremes = lineChart.yAxis[0].getExtremes();
+			if (min > extremes.dataMin) min = extremes.dataMin;
+			if (max < extremes.dataMax) max = extremes.dataMax;
+			max_val = max;
+
+			var range = max - min;
+			console.log(country);
+			console.log(range);
+
+			lineChart.yAxis[0].setExtremes(min, max + range/5);
+			//lineChart.options.yAxis[0].title.text = subindicator.name; //saves into exported options??
+			//lineChart.yAxis[0].setTitle(subindicator.name);
+			lineChart.yAxis[0].update({
+				title:{
+					text: indicator.name.toUpperCase()
+				}
+			});
+			lineChart.series[key].setData(dat, true);
+			lineChart.series[key].update({name: country.id, color: col}, true);
+
 		});
-	
-		var col = "";
-		if (key == 0)
-			col = "#26CBDA";
-		else if (key == 1)
-			col = "#FF9600";
-		else if (key == 2)
-			col = "#12E25C";
 
-		var extremes = lineChart.yAxis[0].getExtremes();
-		if (min > extremes.dataMin) min = extremes.dataMin;
-		if (max < extremes.dataMax) max = extremes.dataMax;
-		max_val = max;
 
-		var range = max - min;
-		console.log(country);
-		console.log(range);
-
-		lineChart.yAxis[0].setExtremes(min, max + range/5);
-		//lineChart.options.yAxis[0].title.text = subindicator.name; //saves into exported options??
-		//lineChart.yAxis[0].setTitle(subindicator.name);
-		lineChart.yAxis[0].update({
-                title:{
-                    text: indicator.name.toUpperCase()
-                }
-            });
-		lineChart.series[key].setData(dat, true);
-		lineChart.series[key].update({name: country, color: col}, true);
 	});
 }
 
