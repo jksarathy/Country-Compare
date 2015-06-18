@@ -726,26 +726,13 @@ function newMap(data){
 }
 
 function drawRose(key, country) {
-
-	//url = "iso_codes[]="+country+"&";
-	//var div = d3.select("#country" + key);
 	
 	var chart = roseCharts[key];
-	
-	//d3.json("/radar_chart.json?years[]=2012&"+url, function(error, json) {
-	/*d3.json("/indicator_scores.json", function(error, json) {
-
-		var ind_scores = json[country];
-		var selected_ind_score = ind_scores[indicator.name];
-		console.log(selected_ind_score);
-		var dat = [];
-
-		$("#ind" + key).html(selected_ind_score);
-
-		$.each(ind_scores, function (name, iso) {*/
 
 	d3.json("/epi_data.json", function(error, json) {
 
+		console.log("in rose chart");
+		
 		var scores = json[country];
 		var epi_score = scores["EPI Score"];
 		var epi_rank = scores["Rank"];
