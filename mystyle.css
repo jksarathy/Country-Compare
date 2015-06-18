@@ -146,7 +146,7 @@ table {
   height: 100%;*/
 }
 #clist {
-  width: 300px
+  width: 200px
   -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
   -moz-box-flex: 1;         /* OLD - Firefox 19- */             /* For old syntax, otherwise collapses. */
   -webkit-flex: 1;          /* Chrome */
@@ -158,7 +158,7 @@ table {
 
 
 #categories {
-  width: 400px
+  width: 500px
   -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
   -moz-box-flex: 1;         /* OLD - Firefox 19- */             /* For old syntax, otherwise collapses. */
   -webkit-flex: 1;          /* Chrome */
@@ -192,6 +192,7 @@ select.custom-dropdown {
   font-family: 'pf_centro_sans_proregular', sans-serif;
   padding: 5px;
   margin: 5px;
+  margin-left: 0px;
   cursor: pointer;
   background: #E0E0E0 url(select2.png) no-repeat right center;
   /*background-size: 40px 37px; /*TO ACCOUNT FOR @2X IMAGE FOR RETINA */
@@ -206,8 +207,8 @@ input {
   position: absolute;
   /*float: right;
   top: 80px;*/
-  bottom: 10px;
-  right: 10px;
+  bottom: 60px;
+  right: 40px;
 }
 
 /*select2.custom-dropdown {
