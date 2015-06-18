@@ -200,6 +200,7 @@ select.custom-dropdown {
   /*background-color: #E0E0E0;*/
   color: #4c4c4c;
   -webkit-border-radius: 5px;
+  left: 50px
   /*border-radius: 5px;*/
   border: 1px solid #b3b3b3;
   font-size: 12px;

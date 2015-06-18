@@ -1112,6 +1112,7 @@ function drawLine(key, country){
 		max_val = max;
 
 		var range = max - min;
+		console.log(range);
 
 		lineChart.yAxis[0].setExtremes(min, max + range/5);
 		//lineChart.options.yAxis[0].title.text = subindicator.name; //saves into exported options??
