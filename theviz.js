@@ -41,18 +41,19 @@ d3.json("/country_list.json", function(error, json) {
     $("#clist").append("<select class='clist' multiple id='edit-select-countries'>"+selecthtml+"</select>");
 
     $("#edit-select-countries").select2( {
-    	maximumSelectionLength: 3
-    	//placeholder: "Start Typing..."
+    	maximumSelectionLength: 3,
+    	placeholder: "Start Typing..."
     });
     
     // Event for checkbox change
     $("#submit_button").click(function() {
+    	console.log(countryselection);
     	var countryselection_id = $('#edit-select-countries').select2("val");
     	var countryselection_name = $('#edit-select-countries').select2("data");
     	console.log(countryselection_name);
     	var new_countryselection = [];
     	$.each(countryselection_id, function(index, element) {
-    		new_countryselection[index] = {"name": countryselection_name[index], "id": countryselection_id[index]};
+    		new_countryselection[index] = {"name": countryselection_name[index].text, "id": countryselection_id[index]};
     	})
     	console.log(new_countryselection);
     	countryselection = (new_countryselection == null) ? countryselection : new_countryselection;
@@ -968,7 +969,7 @@ function emptyRose(key){
 				},
 			},
 			exporting: {
-         		enabled: false
+         		enabled: true
 			}
 		};
 	
