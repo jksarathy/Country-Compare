@@ -971,9 +971,6 @@ function emptyRose(key){
 				series: {
 					pointStart: 0,
 				},
-			},
-			exporting: {
-         		enabled: true
 			}
 		};
 	
