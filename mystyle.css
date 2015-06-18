@@ -144,10 +144,16 @@ input {
   top: 80px;
 }
 
-#clist, #categories, input {display: inline-block; vertical-align: top; height: 100%;}
+#clist, #categories, #input 
+{
+  display: inline-block; 
+  /*vertical-align: top; 
+  height: 100%;*/
+}
 #clist {
   /*width: 300px;*/
   padding-left: 10px;
+  margin: 10px;
   border-right: 1px solid #C0C0C0;
 }
 
@@ -158,7 +164,9 @@ input {
 #categories {
   /*width: 300px;*/
   /*padding: 10px;*/
+  margin: 10px;
   border-right: 1px solid #C0C0C0;
+  left: 50px;
 }
 
 /*#borderRight {
