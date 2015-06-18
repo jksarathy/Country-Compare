@@ -130,6 +130,8 @@ function runCharts() {
 	//drawSpark(sparkCountry);
 	initLine();
 	$.each(countryselection, function(i, d) {
+		console.log("about to draw line");
+		console.log(d.id);
     	drawLine(i, d.id);
     	addTable(i, d.name);
     	//drawGauge(i, d);
