@@ -1058,12 +1058,15 @@ function initLine(){
 
 function drawLine(key, country){
 	console.log(country);
+	console.log("hello");
 	var indicatorid = (indicator.id == "CO2GDPd2") ? "CO2GDPd1" : indicator.id;
 	var x = 0;
     // JSON for line graph
     //"/line_graph.json?indicator=" + indicator.id + "&iso_codes[]=" + country
     d3.json("http://epi.yale.edu/api/raw_data.json?country=" + country + "&indicator=" + indicatorid, function(error, json) {
 		//var dat = [];
+
+		console.log("in d3");
 		
 		if (json === undefined){
 			window.alert("json undefined");
@@ -1112,6 +1115,7 @@ function drawLine(key, country){
 		max_val = max;
 
 		var range = max - min;
+		console.log(country);
 		console.log(range);
 
 		lineChart.yAxis[0].setExtremes(min, max + range/5);

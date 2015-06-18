@@ -36,7 +36,7 @@ h4, h5 {
 
 
 div {
-  border: 1px solid;
+  border: 1px solid red;
   /*margin: 20px;*/
   padding: 0px;
   margin-bottom: 25px;
@@ -144,7 +144,7 @@ input {
   top: 80px;
 }
 
-#clist, #categories, #input 
+#clist, #categories, input 
 {
   display: inline-block; 
   vertical-align: top; 
