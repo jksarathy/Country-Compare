@@ -732,7 +732,7 @@ function drawRose(key, country) {
 	d3.json("/epi_data.json", function(error, json) {
 
 		console.log("in rose chart");
-		
+
 		var scores = json[country];
 		var epi_score = scores["EPI Score"];
 		var epi_rank = scores["Rank"];
@@ -887,7 +887,21 @@ function emptyRose(key){
 				plotBackgroundColor: null,
 				plotBackgroundImage: null,
 				backgroundColor: null, //'#C0C0C0',
-				plotBorderWidth: 0
+				plotBorderWidth: 0,
+				events: {
+                load: function () {
+                    if (this.options.chart.forExport) {
+                        Highcharts.each(this.series, function (series) {
+                           	series.update({
+                                dataLabels: {
+                                    enabled: true
+                                }
+                            }, false);
+                        });
+                    	this.redraw();
+                    }
+                }
+            }
 			},
 			series: [{
 				type: 'column',
