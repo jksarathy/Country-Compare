@@ -131,7 +131,7 @@ table {
   padding: 0;
   display:flex;
   flex-direction: row;
-  position:relative;
+  align-items: stretch;
 }
 
 .map, #lineChart, .maincontainer {
@@ -152,8 +152,7 @@ table {
   -moz-box-flex: 1;         /* OLD - Firefox 19- */             /* For old syntax, otherwise collapses. */
   -webkit-flex: 1;          /* Chrome */
   -ms-flex: 1; 
-  flex: 1 1 100%;
-  align-items: stretch;
+  flex: 1 1 auto;
   padding-right: 5px;
   border-right: 1px solid #C0C0C0;
 }
@@ -165,8 +164,7 @@ table {
   -moz-box-flex: 1;         /* OLD - Firefox 19- */             /* For old syntax, otherwise collapses. */
   -webkit-flex: 1;          /* Chrome */
   -ms-flex: 1; 
-  flex: 1 1 100%;
-  align-items: stretch;
+  flex: 1 1 auto;
   padding-right: 5px;
   padding-left: 5px;
   border-right: 1px solid #C0C0C0;
@@ -179,8 +177,7 @@ table {
   -moz-box-flex: 1;         /* OLD - Firefox 19- */             /* For old syntax, otherwise collapses. */
   -webkit-flex: 1;          /* Chrome */
   -ms-flex: 1; 
-  flex: 1 1 100%;
-  align-items: stretch;
+  flex: 1 1 auto;
 }
 
 select.custom-dropdown {
