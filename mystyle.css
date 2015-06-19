@@ -34,10 +34,10 @@ h4, h5 {
   color: #404040;
 }
 
-
-.mydiv {
+div {
   border: 1px solid red;
-  /*margin: 20px;*/
+}
+.mydiv {
   padding: 0px;
   margin-bottom: 25px;
   margin-top: 25px;
@@ -128,7 +128,7 @@ table {
 
 #form-wrapper {
   margin: 5px;
-  padding: 0;
+  padding: 0px;
   display:flex;
   flex-direction: row;
   align-items: stretch;
@@ -156,11 +156,12 @@ table {
   flex: 1 1 auto;
   padding-right: 5px;
   border-right: 1px solid #C0C0C0;
+  display:block;
 }
 
 
 #categories {
-  width: 500px;
+  width: 450px;
   min-height: 150px;
   -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
   -moz-box-flex: 1;         /* OLD - Firefox 19- */             /* For old syntax, otherwise collapses. */
@@ -170,11 +171,12 @@ table {
   padding-right: 5px;
   padding-left: 5px;
   border-right: 1px solid #C0C0C0;
+  display:block;
 
 }
 
 #input-wrapper {
-  width: 150px;
+  width: 200px;
   min-height: 150px;
   -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
   -moz-box-flex: 1;         /* OLD - Firefox 19- */             /* For old syntax, otherwise collapses. */
